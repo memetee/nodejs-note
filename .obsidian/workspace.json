@@ -1,0 +1,240 @@
+{
+  "main": {
+    "id": "29b537e869be60d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "d3e1106c4fc8633a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08084e700db2dadc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "52dcd083c56d32a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "c2dafb9ec65e9bc1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1673605b98d35ad3",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "d359bcd75d0ce123",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "9eb0e3922dd0f9c7",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "25b595d9ff8cb1cb",
+    "type": "split",
+    "children": [
+      {
+        "id": "aa07a31332e09d51",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b10d13df6b8c073f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "6b4098d8aed47a0f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "6384ff8b65789fc6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "0ba4cfa58009087e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "e8c139768a473a91",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "欢迎.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "欢迎 的大纲"
+            }
+          },
+          {
+            "id": "92a345828cb4cc3c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "08084e700db2dadc",
+  "lastOpenFiles": [
+    "9_http模块.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/master/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/master/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/my-branch-with-slashes/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/my-branch-with-slashes/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/master-only-md/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/master-only-md/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/my-branch/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/my-branch/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/master/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/master/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch-with-slashes/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch-with-slashes/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/master/foo/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/master/bar/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/foo",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/branch-with-slashes-only-file.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/bitbucket-only-file.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/bar",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/README.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/foo",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/branch-only-file.md",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/bar",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/master/foo",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/master/bar",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/my-branch-with-slashes/foo",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/my-branch-with-slashes/bar",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/master-only-md/foo",
+    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/gitlab/master-only-md/bar",
+    "assets/9_http模块.assets/image-20230327231934099.png",
+    "assets/9_http模块.assets/image-20230327231517368.png",
+    "assets/9_http模块.assets/image-20221006143737087.png",
+    "assets/9_http模块.assets/image-20221006143628042.png",
+    "assets/9_http模块.assets/image-20221006132913701.png",
+    "assets/9_http模块.assets/image-20221006132730357.png",
+    "assets/9_http模块.assets/image-20221006132430760.png",
+    "assets/9_http模块.assets/image-20221006132059525.png",
+    "assets/9_http模块.assets/image-20221006131913906.png",
+    "assets/9_http模块.assets/image-20221006131616650.png"
+  ]
+}
