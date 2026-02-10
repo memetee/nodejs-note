@@ -31,7 +31,7 @@
 
 官方：另外所有的流都是EventEmitter的实例：
 
-![image-20230326222623011](.\assets\8_Stream.assets/image-20230326222623011.png)
+![image-20230326222623011](./assets/8_Stream.assets/image-20230326222623011.png)
 
 Node.js中有四种基本流类型：
 

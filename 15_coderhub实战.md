@@ -90,11 +90,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 封装错误处理函数：
 
-![image-20221015222157177](.\assets\15_coderhub实战.assets\image-20221015222157177.png)
+![image-20221015222157177](./assets/15_coderhub实战.assets/image-20221015222157177.png)
 
 App监听错误事件：
 
-![image-20221015222210748](.\assets\15_coderhub实战.assets\image-20221015222210748.png)
+![image-20221015222210748](./assets/15_coderhub实战.assets/image-20221015222210748.png)
 
 
 
@@ -211,15 +211,15 @@ cookie的作用域：（允许cookie发送给哪些URL）
 
 js直接设置和获取cookie：
 
-![image-20221015222954638](.\assets\15_coderhub实战.assets\image-20221015222954638.png)
+![image-20221015222954638](./assets/15_coderhub实战.assets/image-20221015222954638.png)
 
 这个cookie会在会话关闭时被删除掉；
 
-![image-20221015223016221](.\assets\15_coderhub实战.assets\image-20221015223016221.png)
+![image-20221015223016221](./assets/15_coderhub实战.assets/image-20221015223016221.png)
 
 设置cookie，同时设置过期时间（默认单位是秒钟）
 
-![image-20221015223033059](.\assets\15_coderhub实战.assets\image-20221015223033059.png)
+![image-20221015223033059](./assets/15_coderhub实战.assets/image-20221015223033059.png)
 
 
 
@@ -234,7 +234,7 @@ Koa中默认支持直接操作cookie
 - /test请求中设置cookie 
 - /demo请求中获取cookie
 
-![image-20221015223103621](.\assets\15_coderhub实战.assets\image-20221015223103621.png)
+![image-20221015223103621](./assets/15_coderhub实战.assets/image-20221015223103621.png)
 
 
 
@@ -246,11 +246,11 @@ Koa中默认支持直接操作cookie
 
 在koa中，我们可以借助于 koa-session 来实现session认证：
 
-![image-20221015223128783](.\assets\15_coderhub实战.assets\image-20221015223128783.png)
+![image-20221015223128783](./assets/15_coderhub实战.assets/image-20221015223128783.png)
 
-![image-20221015223137228](.\assets\15_coderhub实战.assets\image-20221015223137228.png)
+![image-20221015223137228](./assets/15_coderhub实战.assets/image-20221015223137228.png)
 
-![image-20221015223155110](.\assets\15_coderhub实战.assets\image-20221015223155110.png)
+![image-20221015223155110](./assets/15_coderhub实战.assets/image-20221015223155110.png)
 
 
 
@@ -309,7 +309,7 @@ signature
 - HMACSHA256(base64Url(header)+.+base64Url(payload), secretKey); 
 - 但是如果secretKey暴露是一件非常危险的事情，因为之后就可以模拟颁发token， 也可以解密token；
 
-![image-20221015223504583](.\assets\15_coderhub实战.assets\image-20221015223504583.png)
+![image-20221015223504583](./assets/15_coderhub实战.assets/image-20221015223504583.png)
 
 
 
@@ -319,7 +319,7 @@ signature
 
 当然，在真实开发中，我们可以直接使用一个库来完成： jsonwebtoken；
 
-![image-20221015223539107](.\assets\15_coderhub实战.assets\image-20221015223539107.png)
+![image-20221015223539107](./assets/15_coderhub实战.assets/image-20221015223539107.png)
 
 
 
@@ -357,7 +357,7 @@ openssl
 
 ## 使用公钥和私钥签发和验证签名
 
-![image-20221015223718179](.\assets\15_coderhub实战.assets\image-20221015223718179.png)
+![image-20221015223718179](./assets/15_coderhub实战.assets/image-20221015223718179.png)
 
 
 
@@ -367,9 +367,9 @@ openssl
 
 ## 派发令牌和验证令牌
 
-![image-20221015223741544](.\assets\15_coderhub实战.assets\image-20221015223741544.png)
+![image-20221015223741544](./assets/15_coderhub实战.assets/image-20221015223741544.png)
 
-![image-20221015223750701](.\assets\15_coderhub实战.assets\image-20221015223750701.png)
+![image-20221015223750701](./assets/15_coderhub实战.assets/image-20221015223750701.png)
 
 
 

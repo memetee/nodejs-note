@@ -19,7 +19,7 @@
 SELECT SUM(price) FROM `products`;
 ```
 
-![image-20221018234213568](.\assets\13_MySQL多表操作.assets\image-20221018234213568.png)
+![image-20221018234213568](./assets/13_MySQL多表操作.assets/image-20221018234213568.png)
 
 
 
@@ -29,7 +29,7 @@ SELECT SUM(price) AS totalPrice FROM `products`;
 SELECT SUM(price) totalPrice FROM `products`;
 ```
 
-![image-20221018234324216](.\assets\13_MySQL多表操作.assets\image-20221018234324216.png)
+![image-20221018234324216](./assets/13_MySQL多表操作.assets/image-20221018234324216.png)
 
 
 
@@ -38,7 +38,7 @@ SELECT SUM(price) totalPrice FROM `products`;
 SELECT SUM(price) FROM `products` WHERE brand = '华为';
 ```
 
-![image-20221018234541245](.\assets\13_MySQL多表操作.assets\image-20221018234541245.png)
+![image-20221018234541245](./assets/13_MySQL多表操作.assets/image-20221018234541245.png)
 
 
 
@@ -51,7 +51,7 @@ SELECT SUM(price) FROM `products` WHERE brand = '华为';
 SELECT AVG(price) FROM `products` WHERE brand = '华为';
 ```
 
-![image-20221018234634569](.\assets\13_MySQL多表操作.assets\image-20221018234634569.png)
+![image-20221018234634569](./assets/13_MySQL多表操作.assets/image-20221018234634569.png)
 
 
 
@@ -65,9 +65,9 @@ SELECT MAX(price) FROM `products`;
 SELECT MIN(price) FROM `products`;
  ```
 
-![image-20221018234744278](.\assets\13_MySQL多表操作.assets\image-20221018234744278.png)
+![image-20221018234744278](./assets/13_MySQL多表操作.assets/image-20221018234744278.png)
 
-![image-20221018234832131](.\assets\13_MySQL多表操作.assets\image-20221018234832131.png)
+![image-20221018234832131](./assets/13_MySQL多表操作.assets/image-20221018234832131.png)
 
 
 
@@ -80,7 +80,7 @@ SELECT MIN(price) FROM `products`;
 SELECT COUNT(*) FROM `products` WHERE brand = '华为';
 ```
 
-![image-20221018234935221](.\assets\13_MySQL多表操作.assets\image-20221018234935221.png)
+![image-20221018234935221](./assets/13_MySQL多表操作.assets/image-20221018234935221.png)
 
 
 
@@ -91,7 +91,7 @@ SELECT COUNT(*) FROM `products` WHERE brand = '华为';
 SELECT COUNT(url) FROM `products` WHERE brand = '华为';
 ```
 
-![image-20221018235049399](.\assets\13_MySQL多表操作.assets\image-20221018235049399.png)
+![image-20221018235049399](./assets/13_MySQL多表操作.assets/image-20221018235049399.png)
 
 
 
@@ -100,7 +100,7 @@ SELECT COUNT(url) FROM `products` WHERE brand = '华为';
 SELECT COUNT(price) FROM `products`;
 ```
 
-![image-20221018235137828](.\assets\13_MySQL多表操作.assets\image-20221018235137828.png)
+![image-20221018235137828](./assets/13_MySQL多表操作.assets/image-20221018235137828.png)
 
 
 
@@ -109,13 +109,13 @@ SELECT COUNT(price) FROM `products`;
 SELECT COUNT(DISTINCT price) FROM `products`;
 ```
 
-![image-20221018235235833](.\assets\13_MySQL多表操作.assets\image-20221018235235833.png)
+![image-20221018235235833](./assets/13_MySQL多表操作.assets/image-20221018235235833.png)
 
 
 
 ### mysql的聚合函数列表
 
-![image-20221016000037529](.\assets\13_MySQL多表操作.assets\image-20221016000037529.png)
+![image-20221016000037529](./assets/13_MySQL多表操作.assets/image-20221016000037529.png)
 
 
 
@@ -134,7 +134,7 @@ SELECT COUNT(DISTINCT price) FROM `products`;
 SELECT AVG(price), COUNT(*), AVG(SCORE) FROM `products` GROUP BY brand;
 ```
 
-![image-20221019063255222](.\assets\13_MySQL多表操作.assets\image-20221019063255222.png)
+![image-20221019063255222](./assets/13_MySQL多表操作.assets/image-20221019063255222.png)
 
 GROUP BY通常和聚合函数一起使用：
 
@@ -153,7 +153,7 @@ GROUP BY通常和聚合函数一起使用：
 SELECT brand, AVG(price), COUNT(*), AVG(SCORE) FROM `products` GROUP BY brand;
 ```
 
-![image-20221019063942587](.\assets\13_MySQL多表操作.assets\image-20221019063942587.png)
+![image-20221019063942587](./assets/13_MySQL多表操作.assets/image-20221019063942587.png)
 
 
 
@@ -170,7 +170,7 @@ SELECT brand,
 FROM `products` GROUP BY brand;
 ```
 
-![image-20221019064522592](.\assets\13_MySQL多表操作.assets\image-20221019064522592.png)
+![image-20221019064522592](./assets/13_MySQL多表操作.assets/image-20221019064522592.png)
 
 
 
@@ -207,7 +207,7 @@ FROM `products` GROUP BY brand
 HAVING avgPrice < 4000 and avgScore > 7;
 ```
 
-![image-20221019065106393](.\assets\13_MySQL多表操作.assets\image-20221019065106393.png)
+![image-20221019065106393](./assets/13_MySQL多表操作.assets/image-20221019065106393.png)
 
 
 
@@ -217,7 +217,7 @@ HAVING avgPrice < 4000 and avgScore > 7;
 SELECT brand, AVG(price) AS avgPrice, COUNT(*), AVG(SCORE) FROM `products` GROUP BY brand HAVING avgPrice > 2000;
 ```
 
-![image-20221019065226473](.\assets\13_MySQL多表操作.assets\image-20221019065226473.png)
+![image-20221019065226473](./assets/13_MySQL多表操作.assets/image-20221019065226473.png)
 
 
 
@@ -228,7 +228,7 @@ SELECT brand, AVG(price) AS avgPrice, COUNT(*), AVG(SCORE) FROM `products` GROUP
 SELECT AVG(price) FROM `products` WHERE score > 7.5;
 ```
 
-![image-20221019065353346](.\assets\13_MySQL多表操作.assets\image-20221019065353346.png)
+![image-20221019065353346](./assets/13_MySQL多表操作.assets/image-20221019065353346.png)
 
 
 
@@ -239,7 +239,7 @@ SELECT AVG(price) FROM `products` WHERE score > 7.5;
 SELECT brand, AVG(price) FROM `products` WHERE score > 7.5 GROUP BY brand;
 ```
 
-![image-20221019065818924](.\assets\13_MySQL多表操作.assets\image-20221019065818924.png)
+![image-20221019065818924](./assets/13_MySQL多表操作.assets/image-20221019065818924.png)
 
 
 
@@ -269,7 +269,7 @@ CREATE TABLE IF NOT EXISTS `brand`(
 );
 ```
 
-![image-20221019070334868](.\assets\13_MySQL多表操作.assets\image-20221019070334868.png)
+![image-20221019070334868](./assets/13_MySQL多表操作.assets/image-20221019070334868.png)
 
 
 
@@ -291,7 +291,7 @@ INSERT INTO `brand` (name, website, worldRank) VALUES ('京东', 'www.jd.com', 3
 INSERT INTO `brand` (name, website, worldRank) VALUES ('Google', 'www.google.com', 8);
 ```
 
-![image-20221019070511607](.\assets\13_MySQL多表操作.assets\image-20221019070511607.png)
+![image-20221019070511607](./assets/13_MySQL多表操作.assets/image-20221019070511607.png)
 
 
 
@@ -300,7 +300,7 @@ INSERT INTO `brand` (name, website, worldRank) VALUES ('Google', 'www.google.com
  ALTER TABLE `products` ADD `brand_id` INT;
 ```
 
-![image-20221019070616805](.\assets\13_MySQL多表操作.assets\image-20221019070616805.png)
+![image-20221019070616805](./assets/13_MySQL多表操作.assets/image-20221019070616805.png)
 
 现在给brand_id加东西是没有任何限制的，但是如果这里面的值在其他表没有查到这个id的话就会有问题，所以我们需要对这个值做一个限制
 
@@ -351,7 +351,7 @@ INSERT INTO `brand` (name, website, worldRank) VALUES ('Google', 'www.google.com
  ALTER TABLE `products` ADD FOREIGN KEY(brand_id) REFERENCES brand(id);
 ```
 
-![image-20221019071146752](.\assets\13_MySQL多表操作.assets\image-20221019071146752.png)
+![image-20221019071146752](./assets/13_MySQL多表操作.assets/image-20221019071146752.png)
 
 在products表中，我们可以看到，外键中的brand_id引用的是brand表中的id
 
@@ -364,7 +364,7 @@ INSERT INTO `brand` (name, website, worldRank) VALUES ('Google', 'www.google.com
  UPDATE `products` SET `brand_id` = 1 WHERE `brand` = '华为';
 ```
 
-![image-20221019071442390](.\assets\13_MySQL多表操作.assets\image-20221019071442390.png)
+![image-20221019071442390](./assets/13_MySQL多表操作.assets/image-20221019071442390.png)
 
 
 
@@ -375,7 +375,7 @@ UPDATE `products` SET `brand_id` = 3 WHERE `brand` = '苹果';
 UPDATE `products` SET `brand_id` = 2 WHERE `brand` = '小米';
 ```
 
-![image-20221019071708964](.\assets\13_MySQL多表操作.assets\image-20221019071708964.png)
+![image-20221019071708964](./assets/13_MySQL多表操作.assets/image-20221019071708964.png)
 
 
 
@@ -395,11 +395,11 @@ UPDATE `brand` SET id = 100 WHERE id = 1;
 
 这个时候执行代码是报错的：
 
-![image-20221019071930862](.\assets\13_MySQL多表操作.assets\image-20221019071930862.png)
+![image-20221019071930862](./assets/13_MySQL多表操作.assets/image-20221019071930862.png)
 
 因为这个表中的id被引用了，当然其他的没有被引用的是可以改的
 
-![image-20221019072046685](.\assets\13_MySQL多表操作.assets\image-20221019072046685.png)
+![image-20221019072046685](./assets/13_MySQL多表操作.assets/image-20221019072046685.png)
 
 这里面的删除时和更新时的restrict表示限制删除和更新，因为我们在设置外键的时候，默认brand这个表的id就会被限制，也就是不能修改和删除，因为我们的products的brand_id和其他表的字段有关联，所以不管是products的brand_id还是brand的id发生改变，都是不能改的
 
@@ -446,7 +446,7 @@ UPDATE `brand` SET id = 100 WHERE id = 1;
   -- ) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
   ```
 
-![image-20221019073151441](.\assets\13_MySQL多表操作.assets\image-20221019073151441.png)
+![image-20221019073151441](./assets/13_MySQL多表操作.assets/image-20221019073151441.png)
 
 
 
@@ -457,7 +457,7 @@ UPDATE `brand` SET id = 100 WHERE id = 1;
 ALTER TABLE `products` DROP FOREIGN KEY products_ibfk_1;
 ```
 
-![image-20221019073351244](.\assets\13_MySQL多表操作.assets\image-20221019073351244.png)
+![image-20221019073351244](./assets/13_MySQL多表操作.assets/image-20221019073351244.png)
 
 可以看到products这个表的外键已经被删除了
 
@@ -476,7 +476,7 @@ ON UPDATE CASCADE
 ON DELETE CASCADE;
 ```
 
-![image-20221019073911240](.\assets\13_MySQL多表操作.assets\image-20221019073911240.png)
+![image-20221019073911240](./assets/13_MySQL多表操作.assets/image-20221019073911240.png)
 
 在更新这个表的某一条时候设置为联动的，也就是我在修改子表的主键的时候父表的brand_id会随着变化
 
@@ -493,7 +493,7 @@ ON UPDATE CASCADE
 ON DELETE RESTRICT;
 ```
 
-![image-20221019074945682](.\assets\13_MySQL多表操作.assets\image-20221019074945682.png)
+![image-20221019074945682](./assets/13_MySQL多表操作.assets/image-20221019074945682.png)
 
 
 
@@ -503,9 +503,9 @@ ON DELETE RESTRICT;
 UPDATE brand  SET `id` = 100  WHERE `id` = 1;
 ```
 
-![image-20221019075104922](.\assets\13_MySQL多表操作.assets\image-20221019075104922.png)
+![image-20221019075104922](./assets/13_MySQL多表操作.assets/image-20221019075104922.png)
 
-![image-20221019075123452](.\assets\13_MySQL多表操作.assets\image-20221019075123452.png)
+![image-20221019075123452](./assets/13_MySQL多表操作.assets/image-20221019075123452.png)
 
 
 
@@ -516,7 +516,7 @@ UPDATE brand  SET `id` = 100  WHERE `id` = 1;
 UPDATE products SET `brand_id` = 101 WHERE `brand` = 'OPPO';
 ```
 
-![image-20221019075516636](.\assets\13_MySQL多表操作.assets\image-20221019075516636.png)
+![image-20221019075516636](./assets/13_MySQL多表操作.assets/image-20221019075516636.png)
 
 可以发现是错误的，原因是父表中brand_id字段有关联到其他表的，所以是不允许的
 
@@ -536,7 +536,7 @@ UPDATE products SET `brand_id` = 101 WHERE `brand` = 'OPPO';
 SELECT * FROM `products`, `brand`;
 ```
 
-![image-20221015172746663](.\assets\13_MySQL多表操作.assets\image-20221015172746663.png)
+![image-20221015172746663](./assets/13_MySQL多表操作.assets/image-20221015172746663.png)
 
 
 
@@ -550,7 +550,7 @@ SELECT * FROM `products`, `brand`;
 
 - 也就是说第一张表中每一个条数据，都会和第二张表中的每一条数据结合一次； 
 
-  ![image-20221016094814321](.\assets\13_MySQL多表操作.assets\image-20221016094814321.png)
+  ![image-20221016094814321](./assets/13_MySQL多表操作.assets/image-20221016094814321.png)
 
 - 这个结果我们称之为 笛卡尔乘积，也称之为直积，表示为 X*Y；
 
@@ -565,7 +565,7 @@ SELECT * FROM `products`, `brand`;
   SELECT * FROM `products`, `brand` WHERE products.brand_id = brand.id;
   ```
 
-![image-20221019210039100](.\assets\13_MySQL多表操作.assets\image-20221019210039100.png)
+![image-20221019210039100](./assets/13_MySQL多表操作.assets/image-20221019210039100.png)
 
 我们可以算一下：
 
@@ -573,7 +573,7 @@ SELECT * FROM `products`, `brand`;
 
 - 
 
-  ![image-20221019210418279](.\assets\13_MySQL多表操作.assets\image-20221019210418279.png)
+  ![image-20221019210418279](./assets/13_MySQL多表操作.assets/image-20221019210418279.png)
 
 - 这里没有vivo、锤子科技，一共是27条
 
@@ -590,7 +590,7 @@ SELECT * FROM `products`, `brand`;
 - 内连接
 - 全连接
 
-![image-20221015172917402](.\assets\13_MySQL多表操作.assets\image-20221015172917402.png)
+![image-20221015172917402](./assets/13_MySQL多表操作.assets/image-20221015172917402.png)
 
 
 
@@ -603,7 +603,7 @@ SELECT * FROM `products`, `brand`;
 - 这个时候就表示无论左边的表是否有对应的brand_id的值对应右边表的id，左边的数据都会被查询出来； 
 - 这个也是开发中使用最多的情况，它的完整写法是LEFT [OUTER] JOIN，但是OUTER可以省略的；
 
-![image-20221019212106597](.\assets\13_MySQL多表操作.assets\image-20221019212106597.png)
+![image-20221019212106597](./assets/13_MySQL多表操作.assets/image-20221019212106597.png)
 
 ```sql
 -- 查询所有的手机（包括没有品牌信息的手机）以及对应的品牌和null
@@ -611,13 +611,13 @@ SELECT * FROM `products`, `brand`;
 SELECT * FROM `products` LEFT JOIN `brand` ON products.brand_id = brand.id;
 ```
 
-![image-20221019212000804](.\assets\13_MySQL多表操作.assets\image-20221019212000804.png)
+![image-20221019212000804](./assets/13_MySQL多表操作.assets/image-20221019212000804.png)
 
 对照上面那个图，我们可以知道，以左边的表为主，先把左边的表都给他查到，查到了之后，再匹配那些不相等的，把不相等的去掉，当然如果不存在brand_id，那么就不比了，直接查出来就行了
 
 
 
-![image-20221019212328650](.\assets\13_MySQL多表操作.assets\image-20221019212328650.png)
+![image-20221019212328650](./assets/13_MySQL多表操作.assets/image-20221019212328650.png)
 
 把两张表合在了一起，找到在brand表里没有的信息
 
@@ -626,7 +626,7 @@ SELECT * FROM `products` LEFT JOIN `brand` ON products.brand_id = brand.id;
 SELECT * FROM `products` LEFT JOIN `brand` ON products.brand_id = brand.id WHERE brand.id IS NULL;
 ```
 
-![image-20221019212614041](.\assets\13_MySQL多表操作.assets\image-20221019212614041.png)
+![image-20221019212614041](./assets/13_MySQL多表操作.assets/image-20221019212614041.png)
 
 这段代码的意思是：查找左表中的所有数据，条件是右边表的brand_id没有对应的数据
 
@@ -641,7 +641,7 @@ SELECT * FROM `products` LEFT JOIN `brand` ON products.brand_id = brand.id WHERE
 
 
 
-![image-20221019212839924](.\assets\13_MySQL多表操作.assets\image-20221019212839924.png)
+![image-20221019212839924](./assets/13_MySQL多表操作.assets/image-20221019212839924.png)
 
 ```sql
 -- 查询所有的品牌（包括没有对应的手机数据，品牌也显示）以及对应的手机数据
@@ -653,13 +653,13 @@ SELECT * FROM `products` RIGHT OUTER JOIN `brand` ON products.brand_id = brand.i
 
 对照上面那个图，我们可以知道，以右边的表为主，先把右边的表都给他查到，查到了之后，再匹配那些不相等的，把不相等的去掉，当然如果不存在brand_id，那么就不比了，直接查出来就行了
 
-![image-20221019213104888](.\assets\13_MySQL多表操作.assets\image-20221019213104888.png)
+![image-20221019213104888](./assets/13_MySQL多表操作.assets/image-20221019213104888.png)
 
 可以看到，查到了83条数据，其中81条是交集，也就是上图中A和B的交集，另外有两条是只有B有，所以加在一起就是83条数据，右连接是以右表为主的
 
 
 
-![image-20221019213138577](.\assets\13_MySQL多表操作.assets\image-20221019213138577.png)
+![image-20221019213138577](./assets/13_MySQL多表操作.assets/image-20221019213138577.png)
 
 把两张表合在了一起，找到在products表里没有的信息
 
@@ -668,7 +668,7 @@ SELECT * FROM `products` RIGHT OUTER JOIN `brand` ON products.brand_id = brand.i
 SELECT * FROM `products` RIGHT JOIN `brand` ON products.brand_id = brand.id WHERE products.brand_id IS NULL;
 ```
 
-![image-20221019213551737](.\assets\13_MySQL多表操作.assets\image-20221019213551737.png)
+![image-20221019213551737](./assets/13_MySQL多表操作.assets/image-20221019213551737.png)
 
 这段代码的意思是：查找右表中的所有数据，条件是左边表的brand_id没有对应的数据
 
@@ -680,7 +680,7 @@ SELECT * FROM `products` RIGHT JOIN `brand` ON products.brand_id = brand.id WHER
 
 事实上内连接是表示左边的表和右边的表都有对应的数据关联：
 
-![image-20221019214132200](.\assets\13_MySQL多表操作.assets\image-20221019214132200.png)
+![image-20221019214132200](./assets/13_MySQL多表操作.assets/image-20221019214132200.png)
 
 - 内连接在开发中偶尔也会常见使用，看自己的场景。 
 - 内连接有其他的写法：CROSS JOIN或者 JOIN都可以；
@@ -690,7 +690,7 @@ SELECT * FROM `products` RIGHT JOIN `brand` ON products.brand_id = brand.id WHER
 SELECT * FROM `products` INNER JOIN `brand` ON products.brand_id = brand.id;
 ```
 
-![image-20221019214644147](.\assets\13_MySQL多表操作.assets\image-20221019214644147.png)
+![image-20221019214644147](./assets/13_MySQL多表操作.assets/image-20221019214644147.png)
 
 一定是A表和B表都是有的才可以查到
 
@@ -710,7 +710,7 @@ SELECT * FROM `products`, `brand` WHERE `products`.brand_id = `brand`.id;
 SELECT * FROM `products` JOIN `brand` ON products.brand_id = brand.id WHERE price = 8699;
 ```
 
-![image-20221016102629725](.\assets\13_MySQL多表操作.assets\image-20221016102629725.png)
+![image-20221016102629725](./assets/13_MySQL多表操作.assets/image-20221016102629725.png)
 
 
 
@@ -720,7 +720,7 @@ SELECT * FROM `products` JOIN `brand` ON products.brand_id = brand.id WHERE pric
 
 SQL规范中全连接是使用FULL JOIN，但是MySQL中并没有对它的支持，我们需要使用 UNION 来实现：
 
-![image-20221019214902612](.\assets\13_MySQL多表操作.assets\image-20221019214902612.png)
+![image-20221019214902612](./assets/13_MySQL多表操作.assets/image-20221019214902612.png)
 
 ```sql
 # 全连接
@@ -732,7 +732,7 @@ UNION
 (SELECT * FROM `products` RIGHT JOIN `brand` ON `products`.brand_id = `brand`.id);
 ```
 
-![image-20221019215133101](.\assets\13_MySQL多表操作.assets\image-20221019215133101.png)
+![image-20221019215133101](./assets/13_MySQL多表操作.assets/image-20221019215133101.png)
 
 这个时候，左连接，右连接，左右链接都会查出来
 
@@ -748,7 +748,7 @@ UNION
 (SELECT * FROM `products` RIGHT JOIN `brand` ON `products`.brand_id = `brand`.id WHERE `products`.id IS NULL);
 ```
 
-![image-20221019215253907](.\assets\13_MySQL多表操作.assets\image-20221019215253907.png)
+![image-20221019215253907](./assets/13_MySQL多表操作.assets/image-20221019215253907.png)
 
 
 
@@ -800,7 +800,7 @@ INSERT INTO `courses` (name, price) VALUES ('地理', 333);
 
 因为每个学生可能对应不同的课程，那么我们需要建立一张关系表
 
-![image-20221016173820692](.\assets\13_MySQL多表操作.assets\image-20221016173820692.png)
+![image-20221016173820692](./assets/13_MySQL多表操作.assets/image-20221016173820692.png)
 
 这个就是多对多
 
@@ -847,7 +847,7 @@ INSERT INTO `students_select_courses` (student_id, course_id) VALUES(5, 4);
 
 查询所有有选课的学生，选课的情况
 
-![image-20221019221343702](.\assets\13_MySQL多表操作.assets\image-20221019221343702.png)
+![image-20221019221343702](./assets/13_MySQL多表操作.assets/image-20221019221343702.png)
 
 ```sql
 -- 注意这种查询要用内连接
@@ -861,7 +861,7 @@ SELECT * FROM `students` `stu`
 JOIN `students_select_courses` `ssc` ON `stu`.id = `ssc`.student_id;
 ```
 
-![image-20221019221636482](.\assets\13_MySQL多表操作.assets\image-20221019221636482.png)
+![image-20221019221636482](./assets/13_MySQL多表操作.assets/image-20221019221636482.png)
 
 
 
@@ -877,7 +877,7 @@ JOIN `students_select_courses` AS `ssc` ON `stu`.id = `ssc`.student_id
 JOIN `courses` cs ON `ssc`.course_id = cs.id;
 ```
 
-![image-20221019222125511](.\assets\13_MySQL多表操作.assets\image-20221019222125511.png)
+![image-20221019222125511](./assets/13_MySQL多表操作.assets/image-20221019222125511.png)
 
 这个就是所有学生选择的课程，注意，这里不仅查了表A和表B
 
@@ -899,7 +899,7 @@ JOIN `students_select_courses` AS `ssc` ON `stu`.id = `ssc`.student_id
 JOIN `courses` cs ON `SSC`.course_id = cs.id;
 ```
 
-![image-20221019222528761](.\assets\13_MySQL多表操作.assets\image-20221019222528761.png)
+![image-20221019222528761](./assets/13_MySQL多表操作.assets/image-20221019222528761.png)
 
 这里用的都是内连接
 
@@ -928,7 +928,7 @@ LEFT JOIN `courses` AS cs
 	ON ssc.course_id = cs.id
 ```
 
-![image-20221019233406206](.\assets\13_MySQL多表操作.assets\image-20221019233406206.png)
+![image-20221019233406206](./assets/13_MySQL多表操作.assets/image-20221019233406206.png)
 
 这样就可以查到哪些选课了，哪些没选课
 
@@ -949,7 +949,7 @@ LEFT JOIN `courses` AS cs ON ssc.course_id = cs.id
 WHERE cs.id IS NULL;
 ```
 
-![image-20221019234916165](.\assets\13_MySQL多表操作.assets\image-20221019234916165.png)
+![image-20221019234916165](./assets/13_MySQL多表操作.assets/image-20221019234916165.png)
 
 
 
@@ -965,7 +965,7 @@ RIGHT JOIN `courses` AS cs ON ssc.course_id = cs.id
 WHERE stu.id IS NULL;
 ```
 
-![image-20221019235040752](.\assets\13_MySQL多表操作.assets\image-20221019235040752.png)
+![image-20221019235040752](./assets/13_MySQL多表操作.assets/image-20221019235040752.png)
 
 
 
@@ -981,7 +981,7 @@ LEFT JOIN `courses` AS cs ON ssc.course_id = cs.id
 WHERE student_id = 1;
 ```
 
-![image-20221020064201117](.\assets\13_MySQL多表操作.assets\image-20221020064201117.png)
+![image-20221020064201117](./assets/13_MySQL多表操作.assets/image-20221020064201117.png)
 
 
 
@@ -997,7 +997,7 @@ LEFT JOIN `courses` cs
 	WHERE stu.id = 5;
 ```
 
-![image-20221020064547796](.\assets\13_MySQL多表操作.assets\image-20221020064547796.png)
+![image-20221020064547796](./assets/13_MySQL多表操作.assets/image-20221020064547796.png)
 
 
 
@@ -1009,7 +1009,7 @@ LEFT JOIN `courses` cs
 SELECT * FROM products LEFT JOIN brand ON products.brand_id = brand.id;
 ```
 
-![image-20221020065026787](.\assets\13_MySQL多表操作.assets\image-20221020065026787.png)
+![image-20221020065026787](./assets/13_MySQL多表操作.assets/image-20221020065026787.png)
 
 > 上面的图中，这些品牌信息不应该和价格，名称在同一个层级，它们应该是一个对象
 >
@@ -1051,7 +1051,7 @@ SELECT * FROM products LEFT JOIN brand ON products.brand_id = brand.id;
 
   这里的JSON_OBJECT就是将这几个字段转成json格式，key，value这种参数形式书写
 
-  ![image-20221020065522023](.\assets\13_MySQL多表操作.assets\image-20221020065522023.png)
+  ![image-20221020065522023](./assets/13_MySQL多表操作.assets/image-20221020065522023.png)
 
 但是这个key太长了，所以加上 as brand
 
@@ -1066,7 +1066,7 @@ FROM `products`
 LEFT JOIN `brand` ON products.brand_id = brand.id;
 ```
 
-![image-20221020065626565](.\assets\13_MySQL多表操作.assets\image-20221020065626565.png)
+![image-20221020065626565](./assets/13_MySQL多表操作.assets/image-20221020065626565.png)
 
 
 
@@ -1096,7 +1096,7 @@ LEFT JOIN `brand` ON products.brand_id = brand.id;
   ```
   
 
-![image-20221020070614407](.\assets\13_MySQL多表操作.assets\image-20221020070614407.png)
+![image-20221020070614407](./assets/13_MySQL多表操作.assets/image-20221020070614407.png)
 
 当然，我们也要给这个数组起一个名字
 
@@ -1113,5 +1113,5 @@ JOIN `courses` AS cs ON ssc.course_id = cs.id
 GROUP BY stu.id;
 ```
 
-![image-20221020070654309](.\assets\13_MySQL多表操作.assets\image-20221020070654309.png)
+![image-20221020070654309](./assets/13_MySQL多表操作.assets/image-20221020070654309.png)
 

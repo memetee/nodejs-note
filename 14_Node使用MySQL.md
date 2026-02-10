@@ -60,7 +60,7 @@ connection.query(statement, (err, results, fields) => {
 
 看一下打印
 
-![image-20221020072550247](.\assets\14_Node使用MySQL.assets\image-20221020072550247.png)
+![image-20221020072550247](./assets/14_Node使用MySQL.assets/image-20221020072550247.png)
 
 ```js
 const statement = `
@@ -71,7 +71,7 @@ connection.query(statement, (err, results, fields) => {
 })
 ```
 
-![image-20221020073142180](.\assets\14_Node使用MySQL.assets\image-20221020073142180.png)
+![image-20221020073142180](./assets/14_Node使用MySQL.assets/image-20221020073142180.png)
 
 可以发现，这里建立完链接以后他会一 直阻塞在这里的，他不会停止，如果要停止，你需要ctrl + c 或者文档里有介绍到
 
@@ -103,7 +103,7 @@ connection.on('error', (err) => {
 })
 ```
 
-![image-20221020073326848](.\assets\14_Node使用MySQL.assets\image-20221020073326848.png)
+![image-20221020073326848](./assets/14_Node使用MySQL.assets/image-20221020073326848.png)
 
 
 
@@ -132,7 +132,7 @@ connection.query(statement, (err, results, fields) => {
 })
 ```
 
-![image-20221020073437597](.\assets\14_Node使用MySQL.assets\image-20221020073437597.png)
+![image-20221020073437597](./assets/14_Node使用MySQL.assets/image-20221020073437597.png)
 
 
 
@@ -167,7 +167,7 @@ connection.execute(statement, [6000, 7], (err, results) => {
 })
 ```
 
-![image-20221020074500716](.\assets\14_Node使用MySQL.assets\image-20221020074500716.png)
+![image-20221020074500716](./assets/14_Node使用MySQL.assets/image-20221020074500716.png)
 
 强调：如果再次执行该语句，它将会从LRU（Least Recently Used） Cache中获取获取，省略了编译statement 的时间来提高性能。
 
@@ -207,7 +207,7 @@ connection.execute(statement, [6000, 7], (err, results) => {
 })
 ```
 
-![image-20221020205853946](.\assets\14_Node使用MySQL.assets\image-20221020205853946.png)
+![image-20221020205853946](./assets/14_Node使用MySQL.assets/image-20221020205853946.png)
 
 
 
@@ -219,7 +219,7 @@ connection.execute(statement, [6000, 7], (err, results) => {
 
 目前在JavaScript开发中我们更习惯Promise和await、async的方式，mysql2同样是支持的：
 
-![image-20221015221240873](.\assets\14_Node使用MySQL.assets\image-20221015221240873.png)
+![image-20221015221240873](./assets/14_Node使用MySQL.assets/image-20221015221240873.png)
 
 ```js
 const mysql = require('mysql2');
@@ -245,7 +245,7 @@ connection.promise().execute(statement, [6000, 7]).then(([result, fields]) => {
 })
 ```
 
-![image-20221020210717337](.\assets\14_Node使用MySQL.assets\image-20221020210717337.png)
+![image-20221020210717337](./assets/14_Node使用MySQL.assets/image-20221020210717337.png)
 
 
 
@@ -255,7 +255,7 @@ connection.promise().execute(statement, [6000, 7]).then(([result, fields]) => {
 
 对象关系映射（英语：Object Relational Mapping，简称ORM，或O/RM，或O/R mapping），是一种程序 设计的方案：
 
-![image-20221020212118619](.\assets\14_Node使用MySQL.assets\image-20221020212118619.png)
+![image-20221020212118619](./assets/14_Node使用MySQL.assets/image-20221020212118619.png)
 
 - 从效果上来讲，它提供了一个可在编程语言中，使用 虚拟对象数据库 的效果； 
 - 比如在Java开发中经常使用的ORM包括：Hibernate、MyBatis；
@@ -310,11 +310,11 @@ sequelize.authenticate().then(() => {
 
 ## Sequelize映射关系表
 
-![image-20221015221508325](.\assets\14_Node使用MySQL.assets\image-20221015221508325.png)
+![image-20221015221508325](./assets/14_Node使用MySQL.assets/image-20221015221508325.png)
 
-![image-20221015221521461](.\assets\14_Node使用MySQL.assets\image-20221015221521461.png)
+![image-20221015221521461](./assets/14_Node使用MySQL.assets/image-20221015221521461.png)
 
-![image-20221015221538550](.\assets\14_Node使用MySQL.assets\image-20221015221538550.png)
+![image-20221015221538550](./assets/14_Node使用MySQL.assets/image-20221015221538550.png)
 
 
 
@@ -324,11 +324,11 @@ sequelize.authenticate().then(() => {
 
 ## 多对多关系 – 映射关系
 
-![image-20221015221605779](.\assets\14_Node使用MySQL.assets\image-20221015221605779.png)
+![image-20221015221605779](./assets/14_Node使用MySQL.assets/image-20221015221605779.png)
 
-![image-20221015221618757](.\assets\14_Node使用MySQL.assets\image-20221015221618757.png)
+![image-20221015221618757](./assets/14_Node使用MySQL.assets/image-20221015221618757.png)
 
-![image-20221015221633497](.\assets\14_Node使用MySQL.assets\image-20221015221633497.png)
+![image-20221015221633497](./assets/14_Node使用MySQL.assets/image-20221015221633497.png)
 
 
 
@@ -338,9 +338,9 @@ sequelize.authenticate().then(() => {
 
 ## 多对多关系 – 建立表关系
 
-![image-20221015221700371](.\assets\14_Node使用MySQL.assets\image-20221015221700371.png)
+![image-20221015221700371](./assets/14_Node使用MySQL.assets/image-20221015221700371.png)
 
-![image-20221015221710094](.\assets\14_Node使用MySQL.assets\image-20221015221710094.png)
+![image-20221015221710094](./assets/14_Node使用MySQL.assets/image-20221015221710094.png)
 
 
 
