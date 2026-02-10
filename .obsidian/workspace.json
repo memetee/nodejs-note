@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "8_Stream.md",
+                "file": "1_邂逅nodejs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "8_Stream"
+              "title": "1_邂逅nodejs"
             }
           }
         ]
@@ -194,6 +194,7 @@
   },
   "active": "9f8c16918cdb2c28",
   "lastOpenFiles": [
+    "8_Stream.md",
     "7_事件循环和异步IO.md",
     "6_Buffer和浏览器的事件循环.md",
     "5_开发架手架工具.md",
@@ -219,7 +220,6 @@
     "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch-with-slashes/foo/README.md",
     "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch-with-slashes/bar/README.md",
     "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch/foo/README.md",
-    "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/github/my-branch/bar/README.md",
     "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/foo",
     "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch-with-slashes/bar",
     "自己开发的脚手架/node_modules/download-git-repo/test/fixtures/bitbucket/my-branch/foo",
