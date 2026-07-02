@@ -887,7 +887,7 @@ console对象：提供了简单的调试控制台，在前面讲解输入内容�
 
 - setTimeout(callback, delay[, ...args])：callback在delay毫秒后执行一次；
 - setInterval(callback, delay[, ...args])：callback每delay毫秒重复执行一次；
-- setImmediate(callback[, ...args])：callbackI / O事件后的回调的“立即”执行；
+- setImmediate(callback[, ...args])：callback I / O事件后的回调的“立即”执行；
   - 这里先不展开讨论它和setTimeout(callback, 0)之间的区别；
   - 因为它涉及到事件循环的阶段问题，我会在后续详细讲解事件循环相关的知识；
   - 后面不需要放任何一个delay的时间的
