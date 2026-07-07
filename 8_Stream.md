@@ -31,7 +31,7 @@
 
 官方：另外所有的流都是EventEmitter的实例：
 
-![image-20230326222623011](.\assets\8_Stream.assets/image-20230326222623011.png)
+![image-20230326222623011](./assets/8_Stream.assets/image-20230326222623011.png)
 
 Node.js中有四种基本流类型：
 
@@ -552,19 +552,17 @@ fs.readFile('./bar.txt', (err, data) => {
 ```js
 const fs = require('fs');
 
-// Stream的写法
-const reader = fs.createReadStream("./foo.txt");
-const writer = fs.createWriteStream('./foz.txt');
+const render = fs.createReadStream('./bbb.txt');
+const writer = fs.createWriteStream('./ccc.txt');
 
-fs.readFile('./bar.txt', (err, data) => {
-  console.log(data);
-  fs.writeFile('./baz.txt', data, (err) => {
-    console.log(err);
-  })
+render.on('data', (data) => {
+  writer.write(data)
+})
+render.on('close', (data) => {
+  console.log('关闭了读取')
+  writer.close()
 })
 
-reader.pipe(writer);
-writer.close();
 ```
 
 
@@ -578,6 +576,7 @@ const reader = fs.createReadStream("./foo.txt");
 const writer = fs.createWriteStream('./foz.txt');
 
 reader.pipe(writer);
+writer.close();
 // foz.txt 将会把 foo.txt 的内容复制过来
 ```
 

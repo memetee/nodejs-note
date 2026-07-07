@@ -4,7 +4,7 @@
 
 - 当应用程序（客户端）需要某一个资源时，可以向一个台服务器，通过Http请求获取到这个资源；提供资源的这个服务器，就是一个Web服务器；
 
-![image-20220924200402224](.\.\assets\9_http模块.assets\image-20220924200402224.png)
+![image-20220924200402224](./assets/9_http模块.assets/image-20220924200402224.png)
 
 目前有很多开源的Web服务器：Nginx、Apache（静态）、Apache Tomcat（静态、动态）、Node.js
 
@@ -43,7 +43,7 @@ server.listen(8000, ‘0.0.0.0’， () => {
 - http.createServer会返回服务器的对象；
 - 底层其实使用直接 new Server 对象。
 
-![image-20220924200503504](.\.\assets\9_http模块.assets\image-20220924200503504.png)
+![image-20220924200503504](./assets/9_http模块.assets/image-20220924200503504.png)
 
 那么，当然，我们也可以自己来创建这个对象：
 
@@ -272,7 +272,7 @@ GET
 
 这些信息，Node会帮助我们封装到一个request的对象中，我们可以直接来处理这个request对象：
 
-![image-20221005173117212](.\.\assets\9_http模块.assets\image-20221005173117212.png)
+![image-20221005173117212](./assets/9_http模块.assets/image-20221005173117212.png)
 
 ```js
 const http = require('http');
@@ -319,7 +319,7 @@ POST
 - 比如 http://localhost:8000/login；
 - 比如 http://localhost:8000/products;
 
-![image-20221005174052206](.\.\assets\9_http模块.assets\image-20221005174052206.png)
+![image-20221005174052206](./assets/9_http模块.assets/image-20221005174052206.png)
 
 服务器端需要根据不同的请求地址，作出不同的响应：
 
@@ -356,7 +356,7 @@ server.listen('8000', '127.0.0.1', () => {
 
 我们如何对它进行解析呢？使用内置模块url：
 
-![image-20221005174807233](.\.\assets\9_http模块.assets\image-20221005174807233.png)
+![image-20221005174807233](./assets/9_http模块.assets/image-20221005174807233.png)
 
 ```js
 const http = require('http');
@@ -468,7 +468,7 @@ server.listen('8000', '127.0.0.1', () => {
 
 POST请求
 
-![image-20221005233703793](.\.\assets\9_http模块.assets\image-20221005233703793.png)
+![image-20221005233703793](./assets/9_http模块.assets/image-20221005233703793.png)
 
 ```js
 const http = require('http');
@@ -594,7 +594,7 @@ server.listen('8000', '0.0.0.0', () => {
 
 在request对象的header中也包含很多有用的信息，客户端会默认传递过来一些信息：
 
-![image-20220925151257431](.\.\assets\9_http模块.assets\image-20220925151257431.png)
+![image-20220925151257431](./assets/9_http模块.assets/image-20220925151257431.png)
 
 #### content-type 
 
@@ -605,7 +605,7 @@ content-type是这次请求携带的数据的类型：
 - application/xml表示是xml类型；
 - multipart/form-data表示是上传文件；
 
-![image-20221006091218699](.\.\assets\9_http模块.assets\image-20221006091218699.png)
+![image-20221006091218699](./assets/9_http模块.assets/image-20221006091218699.png)
 
 ```js
 const http = require('http');
@@ -653,7 +653,7 @@ content-length：文件的大小和长度 （例如可以判断图片上传多�
 - 在http1.0中，如果想要继续保持连接：
   - 浏览器需要在请求头中添加 connection: keep-alive；
   - 服务器需要在响应头中添加 connection:keep-alive；
-  - 当客户端再次放请求时，就会使用同一个连接，直接一方中断连接；
+  - 当客户端再次放请求时，就会使用同一个连接，直到一方中断连接；
 - 在http1.1中，所有连接默认是 connection: keep-alive的；
   - 不同的Web服务器会有不同的保持 keep-alive的时间；
   - Node中默认是5s中；
@@ -705,7 +705,7 @@ server.listen('8000', '0.0.0.0', () => {
 
 这种写法是有问题的
 
-![image-20221006092229000](.\.\assets\9_http模块.assets\image-20221006092229000.png)
+![image-20221006092229000](./assets/9_http模块.assets/image-20221006092229000.png)
 
 如果我们没有调用 end和close，客户端将会一直等待结果：
 
@@ -727,7 +727,7 @@ server.listen('8000', '0.0.0.0', () => {
 })
 ```
 
-![image-20221006092339195](.\.\assets\9_http模块.assets\image-20221006092339195.png)
+![image-20221006092339195](./assets/9_http模块.assets/image-20221006092339195.png)
 
 这样就可以
 
@@ -746,7 +746,7 @@ Http状态码（Http Status Code）是用来表示Http响应状态的数字代�
 - Http状态码非常多，可以根据不同的情况，给客户端返回不同的状态码；
 - 常见的状态码是下面这些（后续项目中，也会用到其中的状态码）；
 
-![image-20220925162104808](.\.\assets\9_http模块.assets\image-20220925162104808.png)
+![image-20220925162104808](./assets/9_http模块.assets/image-20220925162104808.png)
 
 设置状态码常见的有两种方式：
 
@@ -765,7 +765,7 @@ server.listen('8000', '0.0.0.0', () => {
 })
 ```
 
-![image-20221006131616650](.\.\assets\9_http模块.assets\image-20221006131616650.png)
+![image-20221006131616650](./assets/9_http模块.assets/image-20221006131616650.png)
 
 
 
@@ -797,11 +797,11 @@ server.listen('8000', '0.0.0.0', () => {
 
 **方式一：**
 
-![image-20221006131913906](.\.\assets\9_http模块.assets\image-20221006131913906.png)
+![image-20221006131913906](./assets/9_http模块.assets/image-20221006131913906.png)
 
 **方式二：**
 
-![image-20221006132059525](.\.\assets\9_http模块.assets\image-20221006132059525.png)
+![image-20221006132059525](./assets/9_http模块.assets/image-20221006132059525.png)
 
 
 
@@ -820,7 +820,7 @@ Header设置 Content-Type有什么作用呢？
   })
   ```
 
-  ![image-20221006132430760](.\.\assets\9_http模块.assets\image-20221006132430760.png)
+  ![image-20221006132430760](./assets/9_http模块.assets/image-20221006132430760.png)
 
 - 默认的方式实际是这样
 
@@ -828,7 +828,7 @@ Header设置 Content-Type有什么作用呢？
     res.setHeader('Content-Type', 'text/plain');
   ```
 
-  ![image-20221006132730357](.\.\assets\9_http模块.assets\image-20221006132730357.png)
+  ![image-20221006132730357](./assets/9_http模块.assets/image-20221006132730357.png)
 
   
 
@@ -839,7 +839,7 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/html');
   res.writeHead(200, {
-  	'Content-Type': 'text/html;charset=utf8'
+  	'Content-Type': 'text/html;charset=ut·f8'
   })
   res.end('<h2>hello world</h2>')
 })
@@ -849,7 +849,7 @@ server.listen('8000', '0.0.0.0', () => {
 })
 ```
 
-![image-20221006132913701](.\.\assets\9_http模块.assets\image-20221006132913701.png)
+![image-20221006132913701](./assets/9_http模块.assets/image-20221006132913701.png)
 
 
 
@@ -1085,6 +1085,7 @@ const server = http.createServer((req, res) => {
   // 创建一个jpg格式的文件
   const fileWriter = fs.createWriteStream('./foo.jpg', {flags: 'a+'});
   // 将客户端请求的数据写入到刚才创建的文件中
+    
   req.pipe(fileWriter);
 
   // 获取文件字节长度
@@ -1125,11 +1126,11 @@ server.listen('8000', '0.0.0.0', () => {
 
 ```
 
-![image-20221006143628042](.\.\assets\9_http模块.assets\image-20221006143628042.png)
+![image-20221006143628042](./assets/9_http模块.assets/image-20221006143628042.png)
 
 上传了之后，我们可以打开这个文件看一下
 
-![image-20221006143737087](.\.\assets\9_http模块.assets\image-20221006143737087.png)
+![image-20221006143737087](./assets/9_http模块.assets/image-20221006143737087.png)
 
 为什么打不开呢，因为写入的字节流是有问题的， 因为不仅仅将图片的信息写入了，body的一些信息也写进去了
 
@@ -1244,6 +1245,18 @@ const server = http.createServer((req, res) => {
   // 设置为图片的格式，这种才能图片编码，设置为二进制的
   req.setEncoding('binary');
 
+// req.headers打印的内容
+// {
+//   'user-agent': 'PostmanRuntime/7.53.0',
+//   accept: '*/*',
+//   'postman-token': 'a7a8e5f0-c08d-4ad3-87cb-a90b7efe5d28',
+//   host: 'localhost:9999',
+//   'accept-encoding': 'gzip, deflate, br',
+//   connection: 'keep-alive',
+//   'content-type': 'multipart/form-data; boundary=--------------------------705039934823053886468411',
+//   'content-length': '259500'
+// }
+    
   // 5.获取content-type中的boundary的值
   let boundary = req.headers['content-type'].split('; ')[1].replace('boundary=', '');
   console.log(boundary) // --------------------------112535538592657107454427

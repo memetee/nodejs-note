@@ -67,7 +67,7 @@ MySQL是一个关系型数据库，其实本质上就是一款软件、一个程
 
 ## 数据组织方式
 
-![image-20221011075411904](.\assets\12_MySql.assets\image-20221011075411904.png)
+![image-20221011075411904](./assets/12_MySql.assets/image-20221011075411904.png)
 
 
 
@@ -84,27 +84,27 @@ MySQL是一个关系型数据库，其实本质上就是一款软件、一个程
 - Windows推荐下载MSI的版本；
 - Mac推荐下载DMG的版本；
 
-![image-20221011213333851](.\assets\12_MySql.assets\image-20221011213333851.png)
+![image-20221011213333851](./assets/12_MySql.assets/image-20221011213333851.png)
 
-![image-20221011213345704](.\assets\12_MySql.assets\image-20221011213345704.png)
+![image-20221011213345704](./assets/12_MySql.assets/image-20221011213345704.png)
 
 下载以后开始安装
 
-![image-20221011213623285](.\assets\12_MySql.assets\image-20221011213623285.png)
+![image-20221011213623285](./assets/12_MySql.assets/image-20221011213623285.png)
 
-![image-20221011213858346](.\assets\12_MySql.assets\image-20221011213858346.png)
+![image-20221011213858346](./assets/12_MySql.assets/image-20221011213858346.png)
 
-![image-20221011214947827](.\assets\12_MySql.assets\image-20221011214947827.png)
+![image-20221011214947827](./assets/12_MySql.assets/image-20221011214947827.png)
 
 一直下一步就行了
 
-![image-20221011215005027](.\assets\12_MySql.assets\image-20221011215005027.png)
+![image-20221011215005027](./assets/12_MySql.assets/image-20221011215005027.png)
 
-![image-20221011214807658](.\assets\12_MySql.assets\image-20221011214807658.png)
+![image-20221011214807658](./assets/12_MySql.assets/image-20221011214807658.png)
 
 可以在这里看到它启动了
 
-![image-20221011214921015](.\assets\12_MySql.assets\image-20221011214921015.png)
+![image-20221011214921015](./assets/12_MySql.assets/image-20221011214921015.png)
 
 
 
@@ -116,13 +116,13 @@ MySQL是一个关系型数据库，其实本质上就是一款软件、一个程
 
 mysql --version
 
-![image-20221012073727819](.\assets\12_MySql.assets\image-20221012073727819.png)
+![image-20221012073727819](./assets/12_MySql.assets/image-20221012073727819.png)
 
 找不到，是因为没有添加到环境变量中
 
-![image-20221012075625183](.\assets\12_MySql.assets\image-20221012075625183.png)
+![image-20221012075625183](./assets/12_MySql.assets/image-20221012075625183.png)
 
-![image-20221012075642503](.\assets\12_MySql.assets\image-20221012075642503.png)
+![image-20221012075642503](./assets/12_MySql.assets/image-20221012075642503.png)
 
 
 
@@ -141,7 +141,7 @@ mysql --version
 mysql -uroot -pCoderwhy888.
 ```
 
-![image-20221012222323763](.\assets\12_MySql.assets\image-20221012222323763.png)
+![image-20221012222323763](./assets/12_MySql.assets/image-20221012222323763.png)
 
 
 
@@ -153,7 +153,7 @@ mysql -uroot -p
 Enter password: your password
 ```
 
-![image-20221012222642021](.\assets\12_MySql.assets\image-20221012222642021.png)
+![image-20221012222642021](./assets/12_MySql.assets/image-20221012222642021.png)
 
 这种方式的密码是见不到的
 
@@ -175,7 +175,7 @@ Enter password: your password
 show databases;
 ```
 
-![image-20221012222918528](.\assets\12_MySql.assets\image-20221012222918528.png)
+![image-20221012222918528](./assets/12_MySql.assets/image-20221012222918528.png)
 
 这里有四个数据库
 
@@ -196,13 +196,13 @@ MySQL默认的数据库：
 create database coderhub;
 ```
 
-![image-20221013073326463](.\assets\12_MySql.assets\image-20221013073326463.png)
+![image-20221013073326463](./assets/12_MySql.assets/image-20221013073326463.png)
 
 ```js
 show databases;
 ```
 
-![image-20221013073358904](.\assets\12_MySql.assets\image-20221013073358904.png)
+![image-20221013073358904](./assets/12_MySql.assets/image-20221013073358904.png)
 
 当前正在使用哪一个数据库
 
@@ -210,7 +210,7 @@ show databases;
 select database();
 ```
 
-![image-20221013073604858](.\assets\12_MySql.assets\image-20221013073604858.png)
+![image-20221013073604858](./assets/12_MySql.assets/image-20221013073604858.png)
 
 可以看到当前没有处于任何数据库
 
@@ -220,7 +220,7 @@ select database();
 use coderhub;
 ```
 
-![image-20221013073730466](.\assets\12_MySql.assets\image-20221013073730466.png)
+![image-20221013073730466](./assets/12_MySql.assets/image-20221013073730466.png)
 
 再看看当前处于哪个数据库
 
@@ -228,7 +228,7 @@ use coderhub;
 select database();
 ```
 
-![image-20221013073922767](.\assets\12_MySql.assets\image-20221013073922767.png)
+![image-20221013073922767](./assets/12_MySql.assets/image-20221013073922767.png)
 
 如果我现在在数据库中建立一张表，那就是建立在了这个数据库中
 
@@ -238,11 +238,11 @@ select database();
 
 查看所有的表
 
-![image-20221013074228556](.\assets\12_MySql.assets\image-20221013074228556.png)
+![image-20221013074228556](./assets/12_MySql.assets/image-20221013074228556.png)
 
 创建一个表
 
-![image-20221013074819057](.\assets\12_MySql.assets\image-20221013074819057.png)
+![image-20221013074819057](./assets/12_MySql.assets/image-20221013074819057.png)
 
 创建一个表，这个表叫users，name字段是字符串也就是varchar类型，字符串比较多的用的一种类型就是varchar，varchar类型是一个可变字符，可变字符是一个类型
 
@@ -254,39 +254,39 @@ height字段是double类型
 
 我们创建了一个表，那么现在我们查看所有的表
 
-![image-20221013075252953](.\assets\12_MySql.assets\image-20221013075252953.png)
+![image-20221013075252953](./assets/12_MySql.assets/image-20221013075252953.png)
 
 再创建一张表
 
-![image-20221013075640214](.\assets\12_MySql.assets\image-20221013075640214.png)
+![image-20221013075640214](./assets/12_MySql.assets/image-20221013075640214.png)
 
 再看一下有多少表
 
-![image-20221013075710159](.\assets\12_MySql.assets\image-20221013075710159.png)
+![image-20221013075710159](./assets/12_MySql.assets/image-20221013075710159.png)
 
 现在有两张表了
 
 现在两张表都是没有数据的，比如我们查看一下
 
-![image-20221013075817601](.\assets\12_MySql.assets\image-20221013075817601.png)
+![image-20221013075817601](./assets/12_MySql.assets/image-20221013075817601.png)
 
 如果我们想插入数据就是这样
 
-![image-20221013080023089](.\assets\12_MySql.assets\image-20221013080023089.png)
+![image-20221013080023089](./assets/12_MySql.assets/image-20221013080023089.png)
 
 insert是插入的意思，插入到哪里呢？ into users，也就是插入到users中，然后插入哪些字段呢？就是name, age, height，插入的值就在values中
 
 再插入一个
 
-![image-20221013080201206](.\assets\12_MySql.assets\image-20221013080201206.png)
+![image-20221013080201206](./assets/12_MySql.assets/image-20221013080201206.png)
 
 再来一个
 
-![image-20221013080237994](.\assets\12_MySql.assets\image-20221013080237994.png)
+![image-20221013080237994](./assets/12_MySql.assets/image-20221013080237994.png)
 
 再看一下这张表有多少数据
 
-![image-20221013080308699](.\assets\12_MySql.assets\image-20221013080308699.png)
+![image-20221013080308699](./assets/12_MySql.assets/image-20221013080308699.png)
 
 
 
@@ -313,19 +313,19 @@ insert是插入的意思，插入到哪里呢？ into users，也就是插入到
 
 ## Navicat建立链接
 
-![image-20221017071609083](.\assets\12_MySql.assets\image-20221017071609083.png)
+![image-20221017071609083](./assets/12_MySql.assets/image-20221017071609083.png)
 
 
 
 打开我们刚才插入的数据
 
-![image-20221013210947558](.\assets\12_MySql.assets\image-20221013210947558.png)
+![image-20221013210947558](./assets/12_MySql.assets/image-20221013210947558.png)
 
 
 
 新建一个数据库
 
-![image-20221013211609831](.\assets\12_MySql.assets\image-20221013211609831.png)
+![image-20221013211609831](./assets/12_MySql.assets/image-20221013211609831.png)
 
 
 
@@ -380,7 +380,7 @@ MySQL的数字类型有很多：
 
 - 整数数字类型：INTEGER，INT，SMALLINT，TINYINT，MEDIUMINT，BIGINT；
 
-  ![image-20221014071344115](.\assets\12_MySql.assets\image-20221014071344115.png)
+  ![image-20221014071344115](./assets/12_MySql.assets/image-20221014071344115.png)
 
 - 浮点数字类型：FLOAT，DOUBLE（FLOAT是4个字节，DOUBLE是8个字节）；
 
@@ -397,11 +397,11 @@ MySQL的数字类型有很多：
   )
   ```
 
-  ![image-20221017205746554](.\assets\12_MySql.assets\image-20221017205746554.png)
+  ![image-20221017205746554](./assets/12_MySql.assets/image-20221017205746554.png)
   
   刷新一下就变成两位了
   
-  ![image-20221017205806594](.\assets\12_MySql.assets\image-20221017205806594.png)
+  ![image-20221017205806594](./assets/12_MySql.assets/image-20221017205806594.png)
   
   
 
@@ -431,11 +431,11 @@ YEAR以YYYY格式显示值
   )
   ```
 
-  ![image-20221017210258137](.\assets\12_MySql.assets\image-20221017210258137.png)
+  ![image-20221017210258137](./assets/12_MySql.assets/image-20221017210258137.png)
   
   刷新一下
   
-  ![image-20221017210420255](.\assets\12_MySql.assets\image-20221017210420255.png)
+  ![image-20221017210420255](./assets/12_MySql.assets/image-20221017210420255.png)
   
   保存的时候就会报错，报错的意思就是 在第一行有错，错误在birthday这个字段的数据
   
@@ -459,7 +459,7 @@ DATE类型用于具有日期部分但没有时间部分的值.
   )
   ```
 
-  ![image-20221017211205200](.\assets\12_MySql.assets\image-20221017211205200.png)
+  ![image-20221017211205200](./assets/12_MySql.assets/image-20221017211205200.png)
 
 
 
@@ -482,7 +482,7 @@ DATETIME类型用于包含日期和时间部分的值：
 
   
 
-  ![image-20221017211542879](.\assets\12_MySql.assets\image-20221017211542879.png)
+  ![image-20221017211542879](./assets/12_MySql.assets/image-20221017211542879.png)
 
   
 
@@ -504,7 +504,7 @@ TIMESTAMP数据类型被用于同时包含日期和时间部分的值：
   );
   ```
 
-  ![image-20221017212307958](.\assets\12_MySql.assets\image-20221017212307958.png)
+  ![image-20221017212307958](./assets/12_MySql.assets/image-20221017212307958.png)
 
 
 
@@ -568,7 +568,7 @@ CREATE TABLE IF NOT EXISTS `students`(
 )
 ```
 
-![image-20221017214812860](.\assets\12_MySql.assets\image-20221017214812860.png)
+![image-20221017214812860](./assets/12_MySql.assets/image-20221017214812860.png)
 
 对于所有引擎，UNIQUE 索引允许NULL包含的列具有多个值NULL。
 
@@ -593,7 +593,7 @@ CREATE TABLE IF NOT EXISTS `students`(
   )
   ```
 
-![image-20221017215510392](.\assets\12_MySql.assets\image-20221017215510392.png)
+![image-20221017215510392](./assets/12_MySql.assets/image-20221017215510392.png)
 
 
 
@@ -616,7 +616,7 @@ CREATE TABLE IF NOT EXISTS `students`(
   )
   ```
 
-![image-20221017220209725](.\assets\12_MySql.assets\image-20221017220209725.png)
+![image-20221017220209725](./assets/12_MySql.assets/image-20221017220209725.png)
 
 这里是把上面的空字符串改成了 ‘我是默认值’
 
@@ -640,7 +640,7 @@ CREATE TABLE IF NOT EXISTS `students`(
   );
   ```
 
-  ![image-20221017221050618](.\assets\12_MySql.assets\image-20221017221050618.png)
+  ![image-20221017221050618](./assets/12_MySql.assets/image-20221017221050618.png)
 
 
 
@@ -666,7 +666,7 @@ CREATE TABLE IF NOT EXISTS `users`(
 )
 ```
 
-![image-20221017224554071](.\assets\12_MySql.assets\image-20221017224554071.png)
+![image-20221017224554071](./assets/12_MySql.assets/image-20221017224554071.png)
 
 往users这个表中新增了一条数据
 
@@ -681,7 +681,7 @@ CREATE TABLE `user1` LIKE `users`;
 
 user1
 
-![image-20221017224722106](.\assets\12_MySql.assets\image-20221017224722106.png)
+![image-20221017224722106](./assets/12_MySql.assets/image-20221017224722106.png)
 
 可以看到是把所有的字段都复制过来了，包括字段的类型等
 
@@ -696,7 +696,7 @@ CREATE TABLE `user2` AS (SELECT * FROM `users`);
 
 user2
 
-![image-20221017225052763](.\assets\12_MySql.assets\image-20221017225052763.png)
+![image-20221017225052763](./assets/12_MySql.assets/image-20221017225052763.png)
 
 
 
@@ -711,7 +711,7 @@ user2
 SHOW DATABASES;
 ```
 
-![image-20221017073920056](.\assets\12_MySql.assets\image-20221017073920056.png)
+![image-20221017073920056](./assets/12_MySql.assets/image-20221017073920056.png)
 
 
 
@@ -720,7 +720,7 @@ SHOW DATABASES;
 USE coderhub;
 ```
 
-![image-20221017074016647](.\assets\12_MySql.assets\image-20221017074016647.png)
+![image-20221017074016647](./assets/12_MySql.assets/image-20221017074016647.png)
 
 这个时候再创建表就在bilibili这个数据库里面创建的
 
@@ -731,7 +731,7 @@ USE coderhub;
 SELECT DATABASE();
 ```
 
-![image-20221017074148843](.\assets\12_MySql.assets\image-20221017074148843.png)
+![image-20221017074148843](./assets/12_MySql.assets/image-20221017074148843.png)
 
 
 
@@ -742,11 +742,11 @@ SELECT DATABASE();
 CREATE DATABASE douyu;
 ```
 
-![image-20221017074506087](.\assets\12_MySql.assets\image-20221017074506087.png)
+![image-20221017074506087](./assets/12_MySql.assets/image-20221017074506087.png)
 
 如果已经有douyu这个数据库了，你再继续执行这个语句的话会报错
 
-![image-20221013231852145](.\assets\12_MySql.assets\image-20221013231852145.png)
+![image-20221013231852145](./assets/12_MySql.assets/image-20221013231852145.png)
 
 如果是在程序中的话，会报异常，甚至程序会崩的
 
@@ -757,17 +757,17 @@ CREATE DATABASE douyu;
 CREATE DATABASE IF NOT EXISTS douyu;
 ```
 
-![image-20221017074654475](.\assets\12_MySql.assets\image-20221017074654475.png)
+![image-20221017074654475](./assets/12_MySql.assets/image-20221017074654475.png)
 
 他也不会新建，因为已经有了
 
 数据库的默认编码格式
 
-![image-20221013232137646](.\assets\12_MySql.assets\image-20221013232137646.png)
+![image-20221013232137646](./assets/12_MySql.assets/image-20221013232137646.png)
 
 我们知道的utf8,这里面也有utf8mb3
 
-![image-20221017201503800](.\assets\12_MySql.assets\image-20221017201503800.png)
+![image-20221017201503800](./assets/12_MySql.assets/image-20221017201503800.png)
 
 但是这个编码（字符集）是不能存储emoji表情，所以我们一般会用utf8mb4这种编码格式
 
@@ -779,7 +779,7 @@ select * from users order by name asc;
 
 我们一般不会将一个图片或者一个视频放到数据库，而是存url
 
-![image-20221017201138441](.\assets\12_MySql.assets\image-20221017201138441.png)
+![image-20221017201138441](./assets/12_MySql.assets/image-20221017201138441.png)
 
 ai：区不区分轻重音，如果是ai是不区分，如果是as是区分
 
@@ -795,7 +795,7 @@ CREATE DATABASE IF NOT EXISTS huya
 	DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci; 
 ```
 
-![image-20221017075347010](.\assets\12_MySql.assets\image-20221017075347010.png)
+![image-20221017075347010](./assets/12_MySql.assets/image-20221017075347010.png)
 
 
 
@@ -808,11 +808,11 @@ CREATE DATABASE IF NOT EXISTS huya
 DROP DATABASE huya;
 ```
 
-![image-20221017075606296](.\assets\12_MySql.assets\image-20221017075606296.png)
+![image-20221017075606296](./assets/12_MySql.assets/image-20221017075606296.png)
 
 如果重新执行这个语句 ，依然会报错
 
-![image-20221017075659294](.\assets\12_MySql.assets\image-20221017075659294.png)
+![image-20221017075659294](./assets/12_MySql.assets/image-20221017075659294.png)
 
 所以我们可以这样写
 
@@ -821,7 +821,7 @@ DROP DATABASE huya;
 DROP DATABASE IF EXISTS huya;
 ```
 
-![image-20221017075757805](.\assets\12_MySql.assets\image-20221017075757805.png)
+![image-20221017075757805](./assets/12_MySql.assets/image-20221017075757805.png)
 
 
 
@@ -834,11 +834,11 @@ DROP DATABASE IF EXISTS huya;
 ALTER DATABASE bilibili CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 ```
 
-![image-20221017200158087](.\assets\12_MySql.assets\image-20221017200158087.png)
+![image-20221017200158087](./assets/12_MySql.assets/image-20221017200158087.png)
 
 这个时候可以发现test这个数据库的编码就变了
 
-![image-20221017200341510](.\assets\12_MySql.assets\image-20221017200341510.png)
+![image-20221017200341510](./assets/12_MySql.assets/image-20221017200341510.png)
 
 *utf8mb3*和*utf8*是一样的，所以可以看到我们设置为utf8的时候，里面变成了*utf8mb3*
 
@@ -853,7 +853,7 @@ ALTER DATABASE bilibili CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 SHOW TABLES;
 ```
 
-![image-20221017201654367](.\assets\12_MySql.assets\image-20221017201654367.png)
+![image-20221017201654367](./assets/12_MySql.assets/image-20221017201654367.png)
 
 
 
@@ -862,7 +862,7 @@ SHOW TABLES;
 DESC user;
 ```
 
-![image-20221017201915746](.\assets\12_MySql.assets\image-20221017201915746.png)
+![image-20221017201915746](./assets/12_MySql.assets/image-20221017201915746.png)
 
 
 
@@ -871,7 +871,7 @@ DESC user;
 SHOW CREATE TABLE `students`;
 ```
 
-![image-20221017203148317](.\assets\12_MySql.assets\image-20221017203148317.png)
+![image-20221017203148317](./assets/12_MySql.assets/image-20221017203148317.png)
 
 ```sql
 # 上面的数据就是这个
@@ -897,7 +897,7 @@ CREATE TABLE IF NOT EXISTS `users`(
 );
 ```
 
-![image-20221017202224819](.\assets\12_MySql.assets\image-20221017202224819.png)
+![image-20221017202224819](./assets/12_MySql.assets/image-20221017202224819.png)
 
 为什么要加``呢，因为如果不加，他可能会把某些东西识别成关键字，从而高亮，比如name，所以我们一般在创建表明或者字段名字的时候可以加上
 
@@ -915,7 +915,7 @@ DROP TABLE users;
 DROP TABLE IF EXISTS `users`;
 ```
 
-![image-20221017202413838](.\assets\12_MySql.assets\image-20221017202413838.png)
+![image-20221017202413838](./assets/12_MySql.assets/image-20221017202413838.png)
 
 
 
@@ -933,28 +933,28 @@ ALTER TABLE `users` RENAME TO `user`;
 ALTER TABLE `user` ADD `updateTime` TIMESTAMP;
 ```
 
-![image-20221017204011097](.\assets\12_MySql.assets\image-20221017204011097.png)
+![image-20221017204011097](./assets/12_MySql.assets/image-20221017204011097.png)
 
 ```SQL
 # 修改字段名称
 ALTER TABLE `user` CHANGE `phoneNum` `telPhone` VARCHAR(20);
 ```
 
-![image-20221017204540174](.\assets\12_MySql.assets\image-20221017204540174.png)
+![image-20221017204540174](./assets/12_MySql.assets/image-20221017204540174.png)
 
 ```sql
 # 修改字段的类型
 ALTER TABLE `user` MODIFY `name` VARCHAR(30);
 ```
 
-![image-20221017204728457](.\assets\12_MySql.assets\image-20221017204728457.png)
+![image-20221017204728457](./assets/12_MySql.assets/image-20221017204728457.png)
 
 ```SQL
 # 删除某一个字段
 ALTER TABLE `user` DROP `age`;
 ```
 
-![image-20221017204823774](.\assets\12_MySql.assets\image-20221017204823774.png)
+![image-20221017204823774](./assets/12_MySql.assets/image-20221017204823774.png)
 
 
 
@@ -976,7 +976,7 @@ CREATE TABLE IF NOT EXISTS `products`(
 );
 ```
 
-![image-20221017233319627](.\assets\12_MySql.assets\image-20221017233319627.png)
+![image-20221017233319627](./assets/12_MySql.assets/image-20221017233319627.png)
 
 
 
@@ -989,7 +989,7 @@ CREATE TABLE IF NOT EXISTS `products`(
 INSERT INTO `products` VALUES (110, '标题', '描述', 200.00, '2022-11-11');
 ```
 
-![image-20221017233713308](.\assets\12_MySql.assets\image-20221017233713308.png)
+![image-20221017233713308](./assets/12_MySql.assets/image-20221017233713308.png)
 
 但是我们一般不会这样做，因为id是自动生成的
 
@@ -1003,7 +1003,7 @@ INSERT INTO `user` (name, telphone, `createTime`, `updateTime`)
 	VALUES ('kobe', '000-111111', '2022-10-10', '2022-10-11');
 ```
 
-![image-20221017234536822](.\assets\12_MySql.assets\image-20221017234536822.png)
+![image-20221017234536822](./assets/12_MySql.assets/image-20221017234536822.png)
 
 可以看到id是递增的
 
@@ -1021,7 +1021,7 @@ INSERT INTO `user` (name, telphone)
 	VALUES ('lilei', '000-222222');
 ```
 
-![image-20221017235320627](.\assets\12_MySql.assets\image-20221017235320627.png)
+![image-20221017235320627](./assets/12_MySql.assets/image-20221017235320627.png)
 
 我们可以发现，没有插入的字段默认是null
 
@@ -1068,7 +1068,7 @@ INSERT INTO `user` (name, telphone)
 	VALUES ('lucy', '000-123123');
 ```
 
-![image-20221017235811482](.\assets\12_MySql.assets\image-20221017235811482.png)
+![image-20221017235811482](./assets/12_MySql.assets/image-20221017235811482.png)
 
 最后一条数据就是我们插入操作的了
 
@@ -1104,7 +1104,7 @@ DELETE FROM `user`;
 DELETE FROM `user` WHERE id = 110;
 ```
 
-![image-20221018202702485](.\assets\12_MySql.assets\image-20221018202702485.png)
+![image-20221018202702485](./assets/12_MySql.assets/image-20221018202702485.png)
 
 可以发现110的那条数据已经被删了
 
@@ -1121,7 +1121,7 @@ DELETE FROM `user` WHERE id = 110;
 UPDATE `user` SET `name` = 'lily', `createTime` = '2020-10-19';
 ```
 
-![image-20221018203911098](.\assets\12_MySql.assets\image-20221018203911098.png)
+![image-20221018203911098](./assets/12_MySql.assets/image-20221018203911098.png)
 
 **注意**：如果你这个字段设置了UNIQUE,你这样设置就会失败。
 
@@ -1132,7 +1132,7 @@ UPDATE `user` SET `name` = 'lily', `createTime` = '2020-10-19';
 UPDATE `user` SET `name` = 'lily', `telphone` = '010-111111' WHERE id = 118;
 ```
 
-![image-20221018204356712](.\assets\12_MySql.assets\image-20221018204356712.png)
+![image-20221018204356712](./assets/12_MySql.assets/image-20221018204356712.png)
 
 注意：可以发现更新的时间updateTime的时间也变换了
 
@@ -1205,7 +1205,7 @@ for (let phone of phoneJson) {
 
 执行这个js文件
 
-![image-20221015151023002](.\assets\12_MySql.assets\image-20221015151023002.png)
+![image-20221015151023002](./assets/12_MySql.assets/image-20221015151023002.png)
 
 插入成功
 
@@ -1224,7 +1224,7 @@ for (let phone of phoneJson) {
 SELECT * FROM `products`;
 ```
 
-![image-20221018214056618](.\assets\12_MySql.assets\image-20221018214056618.png)
+![image-20221018214056618](./assets/12_MySql.assets/image-20221018214056618.png)
 
 
 
@@ -1235,7 +1235,7 @@ SELECT * FROM `products`;
 SELECT title, price FROM `products`;
 ```
 
-![image-20221018214220584](.\assets\12_MySql.assets\image-20221018214220584.png)
+![image-20221018214220584](./assets/12_MySql.assets/image-20221018214220584.png)
 
 
 
@@ -1250,7 +1250,7 @@ SELECT title, price FROM `products`;
 SELECT title as phoneTitle, price as phonePrice FROM `products`;
 ```
 
-![image-20221018214447976](.\assets\12_MySql.assets\image-20221018214447976.png)
+![image-20221018214447976](./assets/12_MySql.assets/image-20221018214447976.png)
 
 可以发现这个key已经被我们改了
 
@@ -1273,7 +1273,7 @@ SELECT title as phoneTitle, price as phonePrice FROM `products`;
 SELECT * FROM `products` WHERE price < 1000;
 ```
 
-![image-20221018215140657](.\assets\12_MySql.assets\image-20221018215140657.png)
+![image-20221018215140657](./assets/12_MySql.assets/image-20221018215140657.png)
 
 
 
@@ -1282,7 +1282,7 @@ SELECT * FROM `products` WHERE price < 1000;
 SELECT title, price FROM `products` WHERE price < 1000;
 ```
 
-![image-20221018215249883](.\assets\12_MySql.assets\image-20221018215249883.png)
+![image-20221018215249883](./assets/12_MySql.assets/image-20221018215249883.png)
 
 
 
@@ -1291,7 +1291,7 @@ SELECT title, price FROM `products` WHERE price < 1000;
 SELECT * FROM `products` WHERE price = 999;
 ```
 
-![image-20221018215352978](.\assets\12_MySql.assets\image-20221018215352978.png)
+![image-20221018215352978](./assets/12_MySql.assets/image-20221018215352978.png)
 
 
 
@@ -1301,7 +1301,7 @@ SELECT * FROM `products` WHERE price != 999;
 SELECT * FROM `products` WHERE price <> 999;
 ```
 
-![image-20221018215502414](.\assets\12_MySql.assets\image-20221018215502414.png)
+![image-20221018215502414](./assets/12_MySql.assets/image-20221018215502414.png)
 
 
 
@@ -1310,7 +1310,7 @@ SELECT * FROM `products` WHERE price <> 999;
 SELECT * FROM `products` WHERE brand = '华为';
 ```
 
-![image-20221018215610468](.\assets\12_MySql.assets\image-20221018215610468.png)
+![image-20221018215610468](./assets/12_MySql.assets/image-20221018215610468.png)
 
 
 
@@ -1340,7 +1340,7 @@ SELECT * FROM `products` WHERE price > 1000 AND price < 2000;
 SELECT * FROM `products` WHERE price > 1000 && price < 2000;
 ```
 
-![image-20221018215916240](.\assets\12_MySql.assets\image-20221018215916240.png)
+![image-20221018215916240](./assets/12_MySql.assets/image-20221018215916240.png)
 
 **注意**：这里不包含1000和2000这两个值
 
@@ -1351,7 +1351,7 @@ SELECT * FROM `products` WHERE price > 1000 && price < 2000;
 SELECT * FROM `products` WHERE price BETWEEN 1000 AND 1999;
 ```
 
-![image-20221018220245032](.\assets\12_MySql.assets\image-20221018220245032.png)
+![image-20221018220245032](./assets/12_MySql.assets/image-20221018220245032.png)
 
 
 
@@ -1362,7 +1362,7 @@ SELECT * FROM `products` WHERE price > 5000 OR brand = '华为';
 SELECT * FROM `products` WHERE price > 5000 || brand = '华为';
 ```
 
-![image-20221018223233111](.\assets\12_MySql.assets\image-20221018223233111.png)
+![image-20221018223233111](./assets/12_MySql.assets/image-20221018223233111.png)
 
 
 
@@ -1371,7 +1371,7 @@ SELECT * FROM `products` WHERE price > 5000 || brand = '华为';
 UPDATE `products` SET url = NULL WHERE id >= 85 AND id <= 88;
 ```
 
-![image-20221018223657298](.\assets\12_MySql.assets\image-20221018223657298.png)
+![image-20221018223657298](./assets/12_MySql.assets/image-20221018223657298.png)
 
 
 
@@ -1380,7 +1380,7 @@ UPDATE `products` SET url = NULL WHERE id >= 85 AND id <= 88;
 SELECT * FROM `products` WHERE url IS NULL;
 ```
 
-![image-20221018223749401](.\assets\12_MySql.assets\image-20221018223749401.png)
+![image-20221018223749401](./assets/12_MySql.assets/image-20221018223749401.png)
 
 
 
@@ -1389,7 +1389,7 @@ SELECT * FROM `products` WHERE url IS NULL;
 SELECT * FROM `products` WHERE url IS NOT NULL;
 ```
 
-![image-20221018223840096](.\assets\12_MySql.assets\image-20221018223840096.png)
+![image-20221018223840096](./assets/12_MySql.assets/image-20221018223840096.png)
 
 
 
@@ -1399,7 +1399,7 @@ SELECT * FROM `products` WHERE brand = '华为' || brand = '小米' || brand = '
 SELECT * FROM `products` WHERE brand  IN ('华为', '小米', '苹果');
 ```
 
-![image-20221018223959736](.\assets\12_MySql.assets\image-20221018223959736.png)
+![image-20221018223959736](./assets/12_MySql.assets/image-20221018223959736.png)
 
 
 
@@ -1420,7 +1420,7 @@ SELECT * FROM `products` WHERE brand  IN ('华为', '小米', '苹果');
 SELECT * FROM `products` WHERE title LIKE '%M%';
 ```
 
-![image-20221018224503261](.\assets\12_MySql.assets\image-20221018224503261.png)
+![image-20221018224503261](./assets/12_MySql.assets/image-20221018224503261.png)
 
 
 
@@ -1429,7 +1429,7 @@ SELECT * FROM `products` WHERE title LIKE '%M%';
 SELECT * FROM `products` WHERE title LIKE '_P%';
 ```
 
-![image-20221018224650528](.\assets\12_MySql.assets\image-20221018224650528.png)
+![image-20221018224650528](./assets/12_MySql.assets/image-20221018224650528.png)
 
 
 
@@ -1438,7 +1438,7 @@ SELECT * FROM `products` WHERE title LIKE '_P%';
 SELECT * FROM `products` WHERE title LIKE 'v%';
 ```
 
-![image-20221018224804644](.\assets\12_MySql.assets\image-20221018224804644.png)
+![image-20221018224804644](./assets/12_MySql.assets/image-20221018224804644.png)
 
 ```sql
 
@@ -1462,7 +1462,7 @@ ORDER BY有两个常用的值：
 SELECT * FROM `products` WHERE brand = '华为' or price < 1000 ORDER BY price ASC;
 ```
 
-![image-20221018225145903](.\assets\12_MySql.assets\image-20221018225145903.png)
+![image-20221018225145903](./assets/12_MySql.assets/image-20221018225145903.png)
 
 
 
@@ -1471,7 +1471,7 @@ SELECT * FROM `products` WHERE brand = '华为' or price < 1000 ORDER BY price A
 SELECT * FROM `products` WHERE brand IN ('华为', '小米', '苹果') ORDER BY price ASC;
 ```
 
-![image-20221018225355102](.\assets\12_MySql.assets\image-20221018225355102.png)
+![image-20221018225355102](./assets/12_MySql.assets/image-20221018225355102.png)
 
 ```sql
 -- 当价格相同的时候，评分高的在前面，也就是说，先以价格进行排序，但是当你价格一样的时候，再以评分进行降序，当然也可以跟更多个
@@ -1479,7 +1479,7 @@ SELECT * FROM `products` WHERE brand  IN ('华为', '小米', '苹果')
 ORDER BY price ASC, score DESC;
 ```
 
-![image-20221018225630959](.\assets\12_MySql.assets\image-20221018225630959.png)
+![image-20221018225630959](./assets/12_MySql.assets/image-20221018225630959.png)
 
 
 
@@ -1498,7 +1498,7 @@ ORDER BY price ASC, score DESC;
 SELECT * FROM `products` LIMIT 20 OFFSET 0;
 ```
 
-![image-20221018233744306](.\assets\12_MySql.assets\image-20221018233744306.png)
+![image-20221018233744306](./assets/12_MySql.assets/image-20221018233744306.png)
 
 
 
@@ -1507,7 +1507,7 @@ SELECT * FROM `products` LIMIT 20 OFFSET 0;
 SELECT * FROM `products` LIMIT 20 OFFSET 20;
 ```
 
-![image-20221018233829792](.\assets\12_MySql.assets\image-20221018233829792.png)
+![image-20221018233829792](./assets/12_MySql.assets/image-20221018233829792.png)
 
 
 
@@ -1516,7 +1516,7 @@ SELECT * FROM `products` LIMIT 20 OFFSET 20;
 SELECT * FROM `products` LIMIT 40, 20;
 ```
 
-![image-20221018233912447](.\assets\12_MySql.assets\image-20221018233912447.png)
+![image-20221018233912447](./assets/12_MySql.assets/image-20221018233912447.png)
 
 
 

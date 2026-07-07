@@ -67,7 +67,7 @@ node bin/www
 // 虽然没有任何提示，但是项目实际上已经跑起来了，默认跑在了3000端口
 ```
 
-![image-20230329202809144](.\assets\10_Express框架.assets/image-20230329202809144.png)
+![image-20230329202809144](./assets/10_Express框架.assets/image-20230329202809144.png)
 
 
 
@@ -105,7 +105,7 @@ app.listen(8000, () => {
 express服务器启动成功
 ```
 
-![image-20221006161223082](.\.\assets\10_Express框架.assets\image-20221006161223082.png)
+![image-20221006161223082](./assets/10_Express框架.assets/image-20221006161223082.png)
 
 
 
@@ -134,7 +134,7 @@ app.listen(8000, () => {
 })
 ```
 
-![image-20221006161446626](.\.\assets\10_Express框架.assets\image-20221006161446626.png)
+![image-20221006161446626](./assets/10_Express框架.assets/image-20221006161446626.png)
 
 这样客户端就能获取到服务端响应的内容
 
@@ -160,7 +160,7 @@ app.listen(8000, () => {
 })
 ```
 
-![image-20221006161740474](.\.\assets\10_Express框架.assets\image-20221006161740474.png)
+![image-20221006161740474](./assets/10_Express框架.assets/image-20221006161740474.png)
 
 
 
@@ -186,7 +186,7 @@ app.listen(8000, () => {
 })
 ```
 
-![image-20221006161920525](.\.\assets\10_Express框架.assets\image-20221006161920525.png)
+![image-20221006161920525](./assets/10_Express框架.assets/image-20221006161920525.png)
 
 
 
@@ -225,7 +225,7 @@ app.listen(8000, () => {
   })
   ```
 
-  ![image-20221006162515497](.\.\assets\10_Express框架.assets\image-20221006162515497.png)
+  ![image-20221006162515497](./assets/10_Express框架.assets/image-20221006162515497.png)
 
 返回数据，我们可以方便的使用json：
 
@@ -253,7 +253,7 @@ app.listen(8000, () => {
   })
   ```
 
-  ![image-20221006162848816](.\.\assets\10_Express框架.assets\image-20221006162848816.png)
+  ![image-20221006162848816](./assets/10_Express框架.assets/image-20221006162848816.png)
 
   可以看到，响应的是对象，也是json数据
   
@@ -287,7 +287,7 @@ Express是一个路由和中间件的Web框架，它本身的功能非常少：
 - 调用栈中的下一个中间件；
   - 所有的中间件都是放在一个stack中的，调用next（）的时候就是调用stack中下一个中间件
 
-![image-20220926071710746](.\.\assets\10_Express框架.assets\image-20220926071710746.png)
+![image-20220926071710746](./assets/10_Express框架.assets/image-20220926071710746.png)
 
 这个回调函数就是中间件
 
@@ -295,7 +295,7 @@ Express是一个路由和中间件的Web框架，它本身的功能非常少：
 
 如果当前中间件功能没有结束请求-响应周期，则必须调用next()将控制权传递给下一个中间件功能，否则，请求 将被挂起（挂起就意味着一直在请求，一直在请求）。
 
-![image-20220926071335206](.\.\assets\10_Express框架.assets\image-20220926071335206.png)
+![image-20220926071335206](./assets/10_Express框架.assets/image-20220926071335206.png)
 
 
 
@@ -336,7 +336,7 @@ app.listen(8000, () => {
  */
 ```
 
-![image-20221006164220449](.\.\assets\10_Express框架.assets\image-20221006164220449.png)
+![image-20221006164220449](./assets/10_Express框架.assets/image-20221006164220449.png)
 
 
 
@@ -430,11 +430,11 @@ app.listen('8000', '127.0.0.1', () => {
 
 ​		因为一个处理请求，只能有一个响应结果，所以一个请求中，只能有一个end
 
-![image-20220926073521526](.\.\assets\10_Express框架.assets\image-20220926073521526.png)
+![image-20220926073521526](./assets/10_Express框架.assets/image-20220926073521526.png)
 
 所以一般是这样写
 
-![image-20220926073606876](.\.\assets\10_Express框架.assets\image-20220926073606876.png)
+![image-20220926073606876](./assets/10_Express框架.assets/image-20220926073606876.png)
 
 只能有一个end。
 
@@ -458,15 +458,15 @@ app.listen('8000', '127.0.0.1', () => {
 })
 ```
 
-![image-20221006203412337](.\.\assets\10_Express框架.assets\image-20221006203412337.png)
+![image-20221006203412337](./assets/10_Express框架.assets/image-20221006203412337.png)
 
 or
 
-![image-20221006203516063](.\.\assets\10_Express框架.assets\image-20221006203516063.png)
+![image-20221006203516063](./assets/10_Express框架.assets/image-20221006203516063.png)
 
 如果是其他的请求，就不行
 
-![image-20221006203542577](.\.\assets\10_Express框架.assets\image-20221006203542577.png)
+![image-20221006203542577](./assets/10_Express框架.assets/image-20221006203542577.png)
 
 注意：
 
@@ -596,7 +596,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 查找所有匹配的中间件，并一个一个执行，如果中间有一个没有调next，后面的都不会执行了
 
-![image-20220926205727655](.\.\assets\10_Express框架.assets\image-20220926205727655.png)
+![image-20220926205727655](./assets/10_Express框架.assets/image-20220926205727655.png)
 
 
 
@@ -855,7 +855,7 @@ app.listen('8000', '127.0.0.1', () => {
 - 客户端可以通过json的方式传递；
 - 也可以通过form表单的方式传递；
 
-![image-20220926072218967](.\.\assets\10_Express框架.assets\image-20220926072218967.png)
+![image-20220926072218967](./assets/10_Express框架.assets/image-20220926072218967.png)
 
 
 
@@ -867,7 +867,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 ### 解析json
 
-![image-20221007084422938](.\.\assets\10_Express框架.assets\image-20221007084422938.png)
+![image-20221007084422938](./assets/10_Express框架.assets/image-20221007084422938.png)
 
 login接口，我们一般会这样写
 
@@ -922,7 +922,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 注意：
 
-![image-20221007092323975](.\.\assets\10_Express框架.assets\image-20221007092323975.png)
+![image-20221007092323975](./assets/10_Express框架.assets/image-20221007092323975.png)
 
 
 
@@ -979,7 +979,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 看一下这个请求
 
-![image-20221007094636664](.\.\assets\10_Express框架.assets\image-20221007094636664.png)
+![image-20221007094636664](./assets/10_Express框架.assets/image-20221007094636664.png)
 
 这个请求在执行的时候，其实上面的代码就不行了，因为在上面的 if 中*content-type*等于 application/json的时候才会进入，所以req.body是undefined
 
@@ -1048,7 +1048,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 有的，比如body-parse
 
-![image-20220926215347757](.\.\assets\10_Express框架.assets\image-20220926215347757.png)
+![image-20220926215347757](./assets/10_Express框架.assets/image-20220926215347757.png)
 
 
 
@@ -1060,7 +1060,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 但是，事实上我们可以使用expres内置的中间件或者使用body-parser来完成：
 
-![image-20221008201030018](.\.\assets\10_Express框架.assets\image-20221008201030018.png)
+![image-20221008201030018](./assets/10_Express框架.assets/image-20221008201030018.png)
 
 这么一个请求，如果没有使用express.json，那么会是这样
 
@@ -1097,7 +1097,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 ### 解析 application/x-www-form-urlencoded：
 
-![image-20221008201404600](.\.\assets\10_Express框架.assets\image-20221008201404600.png)
+![image-20221008201404600](./assets/10_Express框架.assets/image-20221008201404600.png)
 
 如果不使用express.urlencoded，那么会这样
 
@@ -1134,7 +1134,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 但是这样写有一个问题
 
-![image-20221008201648779](.\.\assets\10_Express框架.assets\image-20221008201648779.png)
+![image-20221008201648779](./assets/10_Express框架.assets/image-20221008201648779.png)
 
 上面的意思是本来应该有扩展属性，但是发现是undefined
 
@@ -1173,7 +1173,9 @@ app.use(express.urlencoded({ extended: true })) // 解析 x-www-form-urlencoded
 
 ### 解析form-data
 
-![image-20221008203833498](.\.\assets\10_Express框架.assets\image-20221008203833498.png)
+
+
+![image-20221008203833498](./assets/10_Express框架.assets/image-20221008203833498.png)
 
 
 
@@ -1189,7 +1191,7 @@ express没有提供，所以我们需要用第三方库：multer（express官方
 
 用第三方库来进行form-data类型的数据
 
-![image-20221008204835233](.\.\assets\10_Express框架.assets\image-20221008204835233.png)
+![image-20221008204835233](./assets/10_Express框架.assets/image-20221008204835233.png)
 
 ```js
 
@@ -1214,7 +1216,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 那么如果是文件上传呢？
 
-![image-20221008205006765](.\.\assets\10_Express框架.assets\image-20221008205006765.png)
+![image-20221008205006765](./assets/10_Express框架.assets/image-20221008205006765.png)
 
 **注意：**
 
@@ -1222,7 +1224,7 @@ app.listen('8000', '127.0.0.1', () => {
 - 并且不能将upload.any()放入到全局，下面会有正确代码
 - 使用any会让服务端报错
 
-![image-20220927071011005](.\.\assets\10_Express框架.assets\image-20220927071011005.png)
+![image-20220927071011005](./assets/10_Express框架.assets/image-20220927071011005.png)
 
 
 
@@ -1261,7 +1263,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 - multer配置的dest获取到的数据会有问题
 
-  ![image-20221008213251932](.\.\assets\10_Express框架.assets\image-20221008213251932.png)
+  ![image-20221008213251932](./assets/10_Express框架.assets/image-20221008213251932.png)
 
 - 可以看到这样配置获取不到正确的图片
 
@@ -1308,13 +1310,13 @@ app.listen('8000', '127.0.0.1', () => {
 })
 ```
 
-![image-20221008213457282](.\.\assets\10_Express框架.assets\image-20221008213457282.png)
+![image-20221008213457282](./assets/10_Express框架.assets/image-20221008213457282.png)
 
 可以看到，这样就可以拿到正确的图片了
 
 当然，也可以获取单独的图片
 
-![image-20221008213822664](.\.\assets\10_Express框架.assets\image-20221008213822664.png)
+![image-20221008213822664](./assets/10_Express框架.assets/image-20221008213822664.png)
 
 ```js
 
@@ -1360,7 +1362,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 - 还有另一种上传多个图片的方式
 
-  ![image-20221008215520064](.\.\assets\10_Express框架.assets\image-20221008215520064.png)
+  ![image-20221008215520064](./assets/10_Express框架.assets/image-20221008215520064.png)
 
   ```js
   
@@ -1398,13 +1400,13 @@ app.listen('8000', '127.0.0.1', () => {
 
   可以看一下req.files打印的是什么
 
-  ![image-20221008215648934](.\.\assets\10_Express框架.assets\image-20221008215648934.png)
+  ![image-20221008215648934](./assets/10_Express框架.assets/image-20221008215648934.png)
 
   可以看到，files拿到上传的文件
 
 - 注意：multer有一个很重要的地方
 
-  ![image-20221008215803468](.\.\assets\10_Express框架.assets\image-20221008215803468.png)
+  ![image-20221008215803468](./assets/10_Express框架.assets/image-20221008215803468.png)
 
 
 
@@ -1422,7 +1424,7 @@ app.listen('8000', '127.0.0.1', () => {
   npm install morgan
   ```
 
-![image-20221008221435824](.\.\assets\10_Express框架.assets\image-20221008221435824.png)
+![image-20221008221435824](./assets/10_Express框架.assets/image-20221008221435824.png)
 
 ```js
 
@@ -1452,7 +1454,7 @@ app.listen('8000', '127.0.0.1', () => {
 })
 ```
 
-![image-20221008221533111](.\.\assets\10_Express框架.assets\image-20221008221533111.png)
+![image-20221008221533111](./assets/10_Express框架.assets/image-20221008221533111.png)
 
 这样就有打印的日志了
 
@@ -1510,7 +1512,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 请求信息
 
-![image-20221008223221420](.\.\assets\10_Express框架.assets\image-20221008223221420.png)
+![image-20221008223221420](./assets/10_Express框架.assets/image-20221008223221420.png)
 
 ```js
 const express = require('express');
@@ -1530,7 +1532,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 ### 获取query
 
-![image-20221008223523715](.\.\assets\10_Express框架.assets\image-20221008223523715.png)
+![image-20221008223523715](./assets/10_Express框架.assets/image-20221008223523715.png)
 
 ```js
 
@@ -1576,7 +1578,7 @@ app.listen('8000', '127.0.0.1', () => {
 
 这样的话，我们响应给客户端的就是json数据了
 
-![image-20221008223838643](.\.\assets\10_Express框架.assets\image-20221008223838643.png)
+![image-20221008223838643](./assets/10_Express框架.assets/image-20221008223838643.png)
 
 
 
@@ -1628,7 +1630,7 @@ app.listen('8000', '127.0.0.1', () => {
 })
 ```
 
-![image-20221008225053304](.\.\assets\10_Express框架.assets\image-20221008225053304.png)
+![image-20221008225053304](./assets/10_Express框架.assets/image-20221008225053304.png)
 
 可以看到res.json并没有生效，205导致不生效的（http状态码 205 （**重置内容**） 服务器成功处理了请求，但没有返回任何内容。）
 
@@ -1649,7 +1651,7 @@ app.listen('8000', '127.0.0.1', () => {
 })
 ```
 
-![image-20221008230841299](.\.\assets\10_Express框架.assets\image-20221008230841299.png)
+![image-20221008230841299](./assets/10_Express框架.assets/image-20221008230841299.png)
 
 
 
@@ -1898,9 +1900,9 @@ next不是不能带参数，而是如果带参数了，那么就不会走下一�
 
 express函数的本质其实是createApplication：
 
-![image-20220926225707432](.\.\assets\10_Express框架.assets\image-20220926225707432.png)
+![image-20220926225707432](./assets/10_Express框架.assets/image-20220926225707432.png)
 
-![image-20220926225720737](.\.\assets\10_Express框架.assets\image-20220926225720737.png)
+![image-20220926225720737](./assets/10_Express框架.assets/image-20220926225720737.png)
 
 
 
@@ -1913,9 +1915,9 @@ express函数的本质其实是createApplication：
 - 我们会发现无论是app.use还是app.methods都会注册一个主路由； 
 - 我们会发现app本质上会将所有的函数，交给这个主路由去处理的；
 
-![image-20220926225757584](.\.\assets\10_Express框架.assets\image-20220926225757584.png)
+![image-20220926225757584](./assets/10_Express框架.assets/image-20220926225757584.png)
 
-![image-20220926225809070](.\.\assets\10_Express框架.assets\image-20220926225809070.png)
+![image-20220926225809070](./assets/10_Express框架.assets/image-20220926225809070.png)
 
 
 
@@ -1927,9 +1929,9 @@ express函数的本质其实是createApplication：
 
 - app函数被调用开始的；
 
-![image-20220926225846747](.\.\assets\10_Express框架.assets\image-20220926225846747.png)
+![image-20220926225846747](./assets/10_Express框架.assets/image-20220926225846747.png)
 
-![image-20220926225855965](.\.\assets\10_Express框架.assets\image-20220926225855965.png)
+![image-20220926225855965](./assets/10_Express框架.assets/image-20220926225855965.png)
 
 
 
@@ -1937,6 +1939,6 @@ express函数的本质其实是createApplication：
 
 ## router.handle中做的什么事情呢？
 
-![image-20220926225919463](.\.\assets\10_Express框架.assets\image-20220926225919463.png)
+![image-20220926225919463](./assets/10_Express框架.assets/image-20220926225919463.png)
 
-![image-20220926225938573](.\.\assets\10_Express框架.assets\image-20220926225938573.png)
+![image-20220926225938573](./assets/10_Express框架.assets/image-20220926225938573.png)

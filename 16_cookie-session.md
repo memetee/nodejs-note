@@ -238,7 +238,7 @@ app.listen(8080, () => {
 
 请求test这个接口后，后端就会给前端种一个cookie，注意这个是cookie，cookie的key就叫sessionId，这个名字是我们配置的key的名字
 
-![image-20230416135033849](.\assets\16_jwt.assets\image-20230416135033849.png)
+![image-20230416135033849](./assets/16_jwt.assets/image-20230416135033849.png)
 
 它的value是一串字符串，他就是对我们的 ctx.session.user 做了一个base64就生成了这样一串字符串
 
@@ -279,7 +279,7 @@ app.keys = ["aaaa"];
 
 当我们这样做了之后，会cookie的存储就会变成这样
 
-![image-20230416140326321](.\assets\16_jwt.assets\image-20230416140326321.png)
+![image-20230416140326321](./assets/16_jwt.assets/image-20230416140326321.png)
 
 如果修改了sessionid的话，就拿不到数据了，因为修改了，那么签名就验证不过了，所以就拿不到数据了，这里涉及到内部的一些机制，只需要知道，加了签名之后，如果修改了sessionid，就拿不到数据了就行了。。。
 
@@ -354,7 +354,7 @@ cookie和session的方式有很多的缺点：
   >
   > 那么在服务器集群里面如何去共享session，假如用户访问的是服务器A登录，那么服务器A就会给客户端返回一个session，那么再次访问服务器A的时候，就需要把session给他带过去，服务器A通过之后才会确认客户端的权限，判断是否允许访问某些页面。携带到服务器A是没有问题的，因为session就是服务器A派发的，那么服务器A自然可以认证通过，但是 如果在访问的时候，当前的服务器A它的资源不可用，或者说它的并发压力很大的情况下，nginx显然不会再让你访问服务器A了，而是给你分配其他的服务器资源，比如说给你分配的是服务器B，那你在访问服务器B的时候，你把session给他带过去，服务器B也会对你的session进行认证，但是你是服务器A派发的，服务器B不知道派发的是什么，怎么来给你认证呢，我没办法解析你的session？虽然也可以通过某些方式拿到你的密钥，然后对你做一个解析。但是是非常麻烦的。
   >
-  > ![image-20230416145326977](.\assets\16_jwt.assets\image-20230416145326977.png)
+  > ![image-20230416145326977](./assets/16_jwt.assets/image-20230416145326977.png)
 
   
 
@@ -421,7 +421,7 @@ JWT生成的Token由三部分组成：
     - header的base64Url的编码加一个点再加上payload的base64Url的编码进行拼接，然后再给一个签名，这样就生成了token，这样就不能反编码了吗，是的，因为他不知道我的密钥，所以他不能模拟颁发我的token的，这样就防止了随随便便模拟我的token，去访问服务器的资源，如果signature被暴露出去了呢，暴露出去是一件非常危险的事，如果暴露出去了，说明别人也是可以生成你的token的，那么有没有办法呢？使用HS256这种算法，它是一种对称加密，颁发和解密token都是相同的密钥，这样确实会危险一些。但是如果是非对称加密的话，颁发是通过私钥来的，而解析token是通过公钥来的，只要 私钥不暴露，通过公钥，它是不能颁发token的
   - 但是如果secretKey暴露是一件非常危险的事情，因为之后就可以模拟颁发token， 也可以解密token；
 
-![image-20230416150415124](.\assets\16_jwt.assets\image-20230416150415124.png)
+![image-20230416150415124](./assets/16_jwt.assets/image-20230416150415124.png)
 
 
 
@@ -505,7 +505,7 @@ app.listen(8080, () => {
 
 ```
 
-![image-20230416153410380](.\assets\16_jwt.assets\image-20230416153410380.png)
+![image-20230416153410380](./assets/16_jwt.assets/image-20230416153410380.png)
 
 这个就是token，由三部分组成header + '.' + payload + '.' + 'sig'
 
@@ -527,9 +527,9 @@ app.listen(8080, () => {
 
 首先我们可以拿到请求结果，然后将结果设置到postman的全局变量中，然后在这里引用postman的全局变量就ok了
 
-![image-20230416153921788](.\assets\16_jwt.assets\image-20230416153921788.png)
+![image-20230416153921788](./assets/16_jwt.assets/image-20230416153921788.png)
 
-![image-20230416153730466](.\assets\16_jwt.assets\image-20230416153730466.png)
+![image-20230416153730466](./assets/16_jwt.assets/image-20230416153730466.png)
 
 这里有很多选项，我们一般选的是Bearer Token
 
@@ -537,7 +537,7 @@ app.listen(8080, () => {
 
 这样设置以后就可以发现header自动携带了token
 
-![image-20230416153755147](.\assets\16_jwt.assets\image-20230416153755147.png)
+![image-20230416153755147](./assets/16_jwt.assets/image-20230416153755147.png)
 
 以上是postman的设置方式
 
@@ -575,7 +575,7 @@ openssl
 
 这样的话就会生成两个文件，一个是私钥，一个是公钥
 
-![image-20230416161249534](.\assets\16_jwt.assets\image-20230416161249534.png)
+![image-20230416161249534](./assets/16_jwt.assets/image-20230416161249534.png)
 
 >genrsa: 生成rsa加密的私钥
 >
@@ -585,11 +585,11 @@ openssl
 >
 >1024： 长度
 
-![image-20230416161350406](.\assets\16_jwt.assets\image-20230416161350406.png)
+![image-20230416161350406](./assets/16_jwt.assets/image-20230416161350406.png)
 
 根据私钥生成公钥
 
-![image-20230416161552808](.\assets\16_jwt.assets\image-20230416161552808.png)
+![image-20230416161552808](./assets/16_jwt.assets/image-20230416161552808.png)
 
 > rsa: rsa加密方式
 >
@@ -599,7 +599,7 @@ openssl
 >
 > -out public.key: 导出，名称叫做public.key
 
-![image-20230416161714595](.\assets\16_jwt.assets\image-20230416161714595.png)
+![image-20230416161714595](./assets/16_jwt.assets/image-20230416161714595.png)
 
 
 
@@ -678,7 +678,7 @@ fs在读取文件的时候，有时候可以读取到文件，有时候又不可
 
 也就是会到上一层路径了，也就是key这个文件夹的上一级了，这个时候继续执行上面的代码就会报错，他会说找不到./key/private.key这些文件
 
-![image-20230416162720773](.\assets\16_jwt.assets\image-20230416162720773.png)
+![image-20230416162720773](./assets/16_jwt.assets/image-20230416162720773.png)
 
 如果cd到./key同一级的文件夹就可以
 

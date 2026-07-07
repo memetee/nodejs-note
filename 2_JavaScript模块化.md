@@ -49,19 +49,19 @@ Brendan Eich本人也多次承认过JavaScript设计之初的缺陷，但是随�
 
 bar.js
 
-![image-20220907063655507](.\assets\2_JavaScript模块化.assets\image-20220907063655507.png)
+![image-20220907063655507](./assets/2_JavaScript模块化.assets/image-20220907063655507.png)
 
 foo.js
 
-![image-20220907063733425](.\assets\2_JavaScript模块化.assets\image-20220907063733425.png)
+![image-20220907063733425](./assets/2_JavaScript模块化.assets/image-20220907063733425.png)
 
 引入两个文件
 
-![image-20220907063759958](.\assets\2_JavaScript模块化.assets\image-20220907063759958.png)
+![image-20220907063759958](./assets/2_JavaScript模块化.assets/image-20220907063759958.png)
 
 小明在开发完bar文件之后，又开发了baz这个文件，它没有定义name，就想直接使用，能不能使用呢？可以的
 
-![image-20220907064000570](.\assets\2_JavaScript模块化.assets\image-20220907064000570.png)
+![image-20220907064000570](./assets/2_JavaScript模块化.assets/image-20220907064000570.png)
 
 baz也在html引入后，这个时候打印的时候，会发现这个name不是bar这个文件的名字，而是foo里面的名字
 
@@ -73,11 +73,11 @@ baz也在html引入后，这个时候打印的时候，会发现这个name不是
 
 - IIFE(Immediately Invoked Function Expression)
 
-![image-20220907065501485](.\assets\2_JavaScript模块化.assets\image-20220907065501485.png)
+![image-20220907065501485](./assets/2_JavaScript模块化.assets/image-20220907065501485.png)
 
 在以前的话是用自执行函数来解决的
 
-![image-20220907064523480](.\assets\2_JavaScript模块化.assets\image-20220907064523480.png)
+![image-20220907064523480](./assets/2_JavaScript模块化.assets/image-20220907064523480.png)
 
 这样虽然不会将bar里面的name被其他文件修改，但是也有一个问题，就是其他文件，压根也访问不到这个bar里面的内容了
 
@@ -87,15 +87,15 @@ baz也在html引入后，这个时候打印的时候，会发现这个name不是
 
 把要共享的东西返回出去
 
-![image-20220907065031248](.\assets\2_JavaScript模块化.assets\image-20220907065031248.png)
+![image-20220907065031248](./assets/2_JavaScript模块化.assets/image-20220907065031248.png)
 
 意味着moduleBar这个变量是接收这个自执行函数的返回值的，也就意味着他只想这个retruen，而且moduleBar是在顶层的，如果在其他文件想用name或者age的话可以这样
 
-![image-20220907065153278](.\assets\2_JavaScript模块化.assets\image-20220907065153278.png)
+![image-20220907065153278](./assets/2_JavaScript模块化.assets/image-20220907065153278.png)
 
 而且，对这里的顺序没有任何要求
 
-![image-20220907065227745](.\assets\2_JavaScript模块化.assets\image-20220907065227745.png)
+![image-20220907065227745](./assets/2_JavaScript模块化.assets/image-20220907065227745.png)
 
 
 
@@ -141,15 +141,15 @@ baz也在html引入后，这个时候打印的时候，会发现这个name不是
 
 bar.js文件
 
-![image-20220907071605820](.\assets\2_JavaScript模块化.assets\image-20220907071605820.png)
+![image-20220907071605820](./assets/2_JavaScript模块化.assets/image-20220907071605820.png)
 
 在main.js能不能引用呢？
 
-![image-20220907071639563](.\assets\2_JavaScript模块化.assets\image-20220907071639563.png)
+![image-20220907071639563](./assets/2_JavaScript模块化.assets/image-20220907071639563.png)
 
 显然是不能引用的
 
-![image-20220907071705418](.\assets\2_JavaScript模块化.assets\image-20220907071705418.png)
+![image-20220907071705418](./assets/2_JavaScript模块化.assets/image-20220907071705418.png)
 
 那就验证在node每一个文件就是一个模块，不同的模块是不能相互引用的，那如果我想去访问你这个模块的东西怎么办呢？
 
@@ -157,7 +157,7 @@ bar.js文件
 
 bar.js进行导出
 
-![image-20220907071914476](.\assets\2_JavaScript模块化.assets\image-20220907071914476.png)
+![image-20220907071914476](./assets/2_JavaScript模块化.assets/image-20220907071914476.png)
 
 这三个属性已经被导出了
 
@@ -167,15 +167,15 @@ bar.js进行导出
 
 所以可以这样写
 
-![image-20220907072213107](.\assets\2_JavaScript模块化.assets\image-20220907072213107.png)
+![image-20220907072213107](./assets/2_JavaScript模块化.assets/image-20220907072213107.png)
 
 bar这个变量指向的就是exports这个对象，也可以说，这个bar就是bar.js中的exports这个对象了
 
-![image-20220907072237257](.\assets\2_JavaScript模块化.assets\image-20220907072237257.png)
+![image-20220907072237257](./assets/2_JavaScript模块化.assets/image-20220907072237257.png)
 
 既然这个东西就是这个对象了，我们也可以换一个写法， 对象的解构
 
-![image-20220907072329179](.\assets\2_JavaScript模块化.assets\image-20220907072329179.png)
+![image-20220907072329179](./assets/2_JavaScript模块化.assets/image-20220907072329179.png)
 
 运行起来也是一样的
 
@@ -185,13 +185,13 @@ bar这个变量指向的就是exports这个对象，也可以说，这个bar就�
 
 对象会在堆内存里面开辟一块空间的，而这块空间有自己的内存地址，那么当把一个对象赋值给另外一个变量的时候，这个变量保存的实际上是一个内存地址
 
-![image-20220907072732579](.\assets\2_JavaScript模块化.assets\image-20220907072732579.png)
+![image-20220907072732579](./assets/2_JavaScript模块化.assets/image-20220907072732579.png)
 
 都是同一个地址之后，假如在obj中把name修改成kobe呢？
 
  通过obj找到内存空间，把他修改成kobe
 
-![image-20220907072845494](.\assets\2_JavaScript模块化.assets\image-20220907072845494.png)
+![image-20220907072845494](./assets/2_JavaScript模块化.assets/image-20220907072845494.png)
 
 改成kobe之后我通过info来访问name之后，也是通过内存空间找到name，他就是kobe
 
@@ -199,7 +199,7 @@ bar这个变量指向的就是exports这个对象，也可以说，这个bar就�
 
 这里做了一些导出
 
-![image-20220907072943195](.\assets\2_JavaScript模块化.assets\image-20220907072943195.png)
+![image-20220907072943195](./assets/2_JavaScript模块化.assets/image-20220907072943195.png)
 
 导出之后，require为什么可以拿到呢？
 
@@ -209,15 +209,15 @@ bar这个变量指向的就是exports这个对象，也可以说，这个bar就�
 
 开辟一块空间什么都没有
 
-![image-20220907073247494](.\assets\2_JavaScript模块化.assets\image-20220907073247494.png)
+![image-20220907073247494](./assets/2_JavaScript模块化.assets/image-20220907073247494.png)
 
 main.js想用bar.js里面的东西
 
-![image-20220907073343293](.\assets\2_JavaScript模块化.assets\image-20220907073343293.png)
+![image-20220907073343293](./assets/2_JavaScript模块化.assets/image-20220907073343293.png)
 
 main里面通过require来获取bar.js里面的东西，也就是想获取exports这个对象，也就是想获取0x100这个内存空间，也就是require执行完了以后返回一个对象，这个对象指向0x100
 
-![image-20220907073440608](.\assets\2_JavaScript模块化.assets\image-20220907073440608.png)
+![image-20220907073440608](./assets/2_JavaScript模块化.assets/image-20220907073440608.png)
 
 一旦require执行以后返回0x100那么bar这个变量指向的就是0x100
 
@@ -229,9 +229,9 @@ bar.js中在写这行代码的时候会怎么样呢？
 
 又给export添加属性，依然先找到内存空间，然后添加属性
 
-![image-20220907073856569](.\assets\2_JavaScript模块化.assets\image-20220907073856569.png)
+![image-20220907073856569](./assets/2_JavaScript模块化.assets/image-20220907073856569.png)
 
-![image-20220907073813377](.\assets\2_JavaScript模块化.assets\image-20220907073813377.png)
+![image-20220907073813377](./assets/2_JavaScript模块化.assets/image-20220907073813377.png)
 
 函数比较特殊，它传递过去的是函数的地址，任何地方都可以执行这个函数
 
@@ -245,9 +245,9 @@ bar.js中在写这行代码的时候会怎么样呢？
 
 在bar.js中这样写
 
-![image-20220907074033938](.\assets\2_JavaScript模块化.assets\image-20220907074033938.png)
+![image-20220907074033938](./assets/2_JavaScript模块化.assets/image-20220907074033938.png)
 
-![image-20220907074205874](.\assets\2_JavaScript模块化.assets\image-20220907074205874.png)
+![image-20220907074205874](./assets/2_JavaScript模块化.assets/image-20220907074205874.png)
 
 一秒钟之后进行修改，两秒钟之后重新读取，如果他们指向的是同一个内存空间的话，那么是可以读到新的name的
 
@@ -259,11 +259,11 @@ bar.js中在写这行代码的时候会怎么样呢？
 
 甚至可以这样
 
-![image-20220907075018949](.\assets\2_JavaScript模块化.assets\image-20220907075018949.png)
+![image-20220907075018949](./assets/2_JavaScript模块化.assets/image-20220907075018949.png)
 
 在main.js中1秒钟之后把导入的bar中的name修改成哈哈哈
 
-![image-20220907075108473](.\assets\2_JavaScript模块化.assets\image-20220907075108473.png)
+![image-20220907075108473](./assets/2_JavaScript模块化.assets/image-20220907075108473.png)
 
 在两秒钟之后让bar.js来打印exports中的name
 
@@ -297,7 +297,7 @@ bar.js中在写这行代码的时候会怎么样呢？
 
 当我们console.log(module) 的时候
 
-![image-20220907075916286](.\assets\2_JavaScript模块化.assets\image-20220907075916286.png)
+![image-20220907075916286](./assets/2_JavaScript模块化.assets/image-20220907075916286.png)
 
 他就是一个module类
 
@@ -323,17 +323,17 @@ module.exports = exports
 
 就意味着内存地址给他了
 
-![image-20220909063619142](.\assets\2_JavaScript模块化.assets\image-20220909063619142.png)
+![image-20220909063619142](./assets/2_JavaScript模块化.assets/image-20220909063619142.png)
 
-![image-20220909063701553](.\assets\2_JavaScript模块化.assets\image-20220909063701553.png)
+![image-20220909063701553](./assets/2_JavaScript模块化.assets/image-20220909063701553.png)
 
 三个都指向同一个内存空间的，也就是同一个对象
 
 可以验证一下
 
-![image-20220909063831035](.\assets\2_JavaScript模块化.assets\image-20220909063831035.png)
+![image-20220909063831035](./assets/2_JavaScript模块化.assets/image-20220909063831035.png)
 
-![image-20220909063901912](.\assets\2_JavaScript模块化.assets\image-20220909063901912.png)
+![image-20220909063901912](./assets/2_JavaScript模块化.assets/image-20220909063901912.png)
 
 它们打印的都是 哈哈哈
 
@@ -341,17 +341,17 @@ module.exports = exports
 
 如果这样做了呢
 
-![image-20220909064107811](.\assets\2_JavaScript模块化.assets\image-20220909064107811.png)
+![image-20220909064107811](./assets/2_JavaScript模块化.assets/image-20220909064107811.png)
 
 这里 module.export赋值了一个新对象
 
 那么内存里面赋值了一个新对象
 
-![image-20220909064152844](.\assets\2_JavaScript模块化.assets\image-20220909064152844.png)
+![image-20220909064152844](./assets/2_JavaScript模块化.assets/image-20220909064152844.png)
 
 所以导入的地方就执行它了
 
-![image-20220909064216769](.\assets\2_JavaScript模块化.assets\image-20220909064216769.png)
+![image-20220909064216769](./assets/2_JavaScript模块化.assets/image-20220909064216769.png)
 
 不管上面exports怎么赋值，但是因为最后我给module.export赋值了一个空对象，所以导入的地方也只会导入一个空对象
 
@@ -359,9 +359,9 @@ module.exports = exports
 
 赋值操作的位置
 
-![image-20220909070400623](.\assets\2_JavaScript模块化.assets\image-20220909070400623.png)
+![image-20220909070400623](./assets/2_JavaScript模块化.assets/image-20220909070400623.png)
 
-![image-20220909070607855](.\assets\2_JavaScript模块化.assets\image-20220909070607855.png)
+![image-20220909070607855](./assets/2_JavaScript模块化.assets/image-20220909070607855.png)
 
 赋值的操作是在顶层的，在顶层module.exports会先被赋值为一个空对象，然后将module.exports赋值给exports，然后exports修改了内存地址，所以export修改后的值无法影响到module.exports了，通过打印可以说明这个问题，打印的是空对象，说明，在顶层的时候赋值给了module.exports这个对象一个空对象，然后exports重新对自己赋值了，但是没有影响到module.exports
 
@@ -433,11 +433,11 @@ module.exports = exports
 - 当我写这个东西的时候require('why');
 - 当我查找why不是一个node的核心模块的时候，就会去node_module中去找，如果当前02_commonjs找不到的话，就会去上一层的文件夹node_module找，会一层一层的去找，这就是为什么会安装到node_module中，因为他会一直往上找node_module中去查找
 
-![image-20220909071704840](.\assets\2_JavaScript模块化.assets\image-20220909071704840.png)
+![image-20220909071704840](./assets/2_JavaScript模块化.assets/image-20220909071704840.png)
 
 
 
-![image-20220909073501189](.\assets\2_JavaScript模块化.assets\image-20220909073501189.png)
+![image-20220909073501189](./assets/2_JavaScript模块化.assets/image-20220909073501189.png)
 
 这里打印了module对象
 
@@ -445,7 +445,7 @@ module.exports = exports
 
 id: 这个id，因为我执行的就是当前这个模块，所以它是一个.  ，如果我执行的是其他模块，这里就不是一个.了，而是一个路径了
 
-![image-20220909073611773](.\assets\2_JavaScript模块化.assets\image-20220909073611773.png)
+![image-20220909073611773](./assets/2_JavaScript模块化.assets/image-20220909073611773.png)
 
 exports: 当前文件所在的路径，也包括exports属性，默认情况下，exports就是一个空的对象，可以往这个对象里面添加其他的属性，然后把这个属性导出出去了
 
@@ -455,11 +455,11 @@ parent: 是个null，因为你就是根路径，为什么是根路径，因为�
 
 还有children，表示还有哪些子模块
 
-![image-20230315214336297](.\assets\2_JavaScript模块化.assets\image-20230315214336297.png)
+![image-20230315214336297](./assets/2_JavaScript模块化.assets/image-20230315214336297.png)
 
 还有个paths，这个paths就是上面的path，如果我找why，找不到的话，他就会开始遍历paths这个数组，然后一个一个的沿着这个数组去找
 
-![image-20220910173652880](.\assets\2_JavaScript模块化.assets\image-20220910173652880.png)
+![image-20220910173652880](./assets/2_JavaScript模块化.assets/image-20220910173652880.png)
 
 一直找到最后，如果还没有找到的话就会报错，这个就是它的查找顺序
 
@@ -471,15 +471,15 @@ parent: 是个null，因为你就是根路径，为什么是根路径，因为�
 
  结论一：模块在被第一次引入时，模块中的js代码会被运行一次
 
-![image-20220910174634707](.\assets\2_JavaScript模块化.assets\image-20220910174634707.png)
+![image-20220910174634707](./assets/2_JavaScript模块化.assets/image-20220910174634707.png)
 
-![image-20220910174809592](.\assets\2_JavaScript模块化.assets\image-20220910174809592.png)
+![image-20220910174809592](./assets/2_JavaScript模块化.assets/image-20220910174809592.png)
 
 发现都有被打印
 
 所以，相当于在main.js中做了两件事情，第一件事，引入了这个文件，第二件事我自己做了一个打印，就是main.js里面自己也做了一个打印，
 
-![image-20220910174930086](.\assets\2_JavaScript模块化.assets\image-20220910174930086.png)
+![image-20220910174930086](./assets/2_JavaScript模块化.assets/image-20220910174930086.png)
 
 那么why和codewhy，在main.js代码执行的时候，main中的打印，是在bar.js的打印之前，还是之后呢？
 
@@ -509,27 +509,27 @@ parent: 是个null，因为你就是根路径，为什么是根路径，因为�
 
 foo引入了一次bar.js
 
-![image-20220910200510763](.\assets\2_JavaScript模块化.assets\image-20220910200510763.png)
+![image-20220910200510763](./assets/2_JavaScript模块化.assets/image-20220910200510763.png)
 
 main.js也会引入一次bar.js
 
-![image-20220910200553626](.\assets\2_JavaScript模块化.assets\image-20220910200553626.png)
+![image-20220910200553626](./assets/2_JavaScript模块化.assets/image-20220910200553626.png)
 
 也就是说bar.js在foo.js加载一次，在main.js也会加载一次
 
-![image-20220910200727674](.\assets\2_JavaScript模块化.assets\image-20220910200727674.png)
+![image-20220910200727674](./assets/2_JavaScript模块化.assets/image-20220910200727674.png)
 
 可以看出来只加载了一次，只加载了一次就说明，它是有一个缓存的，加载完一次之后，下一次就不会再加载了，下一次使用的话，就直接取就行了
 
 
 
-![image-20220910200833041](.\assets\2_JavaScript模块化.assets\image-20220910200833041.png)
+![image-20220910200833041](./assets/2_JavaScript模块化.assets/image-20220910200833041.png)
 
 module里面有一个属性就是loaded，这个属性就是用来记录这个模块有没有被加载过，一旦这个模块被加载过之后，这个属性就会变成true
 
 因为子模块也使用了这个东西，所以子模块的loaded会设置为true
 
-![image-20220910200940672](.\assets\2_JavaScript模块化.assets\image-20220910200940672.png)
+![image-20220910200940672](./assets/2_JavaScript模块化.assets/image-20220910200940672.png)
 
 但是我自己的loaded为什么是false呢？因为在打印的这个时候我自己的模块还没有加载完，所以它是一个false，等我自己加载完了之后我的loaded也会变成true的
 
@@ -545,17 +545,17 @@ module里面有一个属性就是loaded，这个属性就是用来记录这个�
 -  图结构在遍历的过程中，有深度优先搜索（DFS, depth first search）和广度优先搜索（BFS, breadth first  search）；
 - Node采用的是深度优先算法：main -> aaa -> ccc -> ddd -> eee ->bbb
 
-![image-20220910172819369](.\assets\2_JavaScript模块化.assets\image-20220910172819369.png)
+![image-20220910172819369](./assets/2_JavaScript模块化.assets/image-20220910172819369.png)
 
 在主入口如果加载了aaa，aaa又加载了ccc，ccc又加载了ddd，ddd又加载了eee，右边的bbb加载了ccc，可以发现，这里形成了一个闭环
 
-![image-20220910201205891](.\assets\2_JavaScript模块化.assets\image-20220910201205891.png)
+![image-20220910201205891](./assets/2_JavaScript模块化.assets/image-20220910201205891.png)
 
 形成了闭环会不会无限加载呢？ 
 
 其实是不会的，它是有自己的一个加载顺序的，当然这个加载顺序可以验证一下
 
-![image-20220910201344098](.\assets\2_JavaScript模块化.assets\image-20220910201344098.png)
+![image-20220910201344098](./assets/2_JavaScript模块化.assets/image-20220910201344098.png)
 
 按照上面的图创建文件
 
@@ -563,27 +563,27 @@ module里面有一个属性就是loaded，这个属性就是用来记录这个�
 
 main.js
 
-![image-20220910201438199](.\assets\2_JavaScript模块化.assets\image-20220910201438199.png)
+![image-20220910201438199](./assets/2_JavaScript模块化.assets/image-20220910201438199.png)
 
 aaa.js
 
-![image-20230315215802584](.\assets\2_JavaScript模块化.assets\image-20230315215802584.png)
+![image-20230315215802584](./assets/2_JavaScript模块化.assets/image-20230315215802584.png)
 
 ccc.js
 
-![image-20230315215827050](.\assets\2_JavaScript模块化.assets\image-20230315215827050.png)
+![image-20230315215827050](./assets/2_JavaScript模块化.assets/image-20230315215827050.png)
 
 eee.js
 
-![image-20230315215849088](.\assets\2_JavaScript模块化.assets\image-20230315215849088.png)
+![image-20230315215849088](./assets/2_JavaScript模块化.assets/image-20230315215849088.png)
 
 bbb.js
 
-![image-20230315215907191](.\assets\2_JavaScript模块化.assets\image-20230315215907191.png)
+![image-20230315215907191](./assets/2_JavaScript模块化.assets/image-20230315215907191.png)
 
 ddd.js
 
-![image-20230315220231951](.\assets\2_JavaScript模块化.assets\image-20230315220231951.png)
+![image-20230315220231951](./assets/2_JavaScript模块化.assets/image-20230315220231951.png)
 
 
 
@@ -591,7 +591,7 @@ ddd.js
 
 
 
-![image-20220910201649253](.\assets\2_JavaScript模块化.assets\image-20220910201649253.png)
+![image-20220910201649253](./assets/2_JavaScript模块化.assets/image-20220910201649253.png)
 
 你会发现，他会先加载main.js
 
@@ -599,7 +599,7 @@ ddd.js
 
 他会先走aaa，然后顺着aaa走到最根上，当发现最根上没有指向了之后，他会再回来，在ddd看有没有其他指向，没有再走到ccc看有没有其他指向，再往上走到aaa，再往上走到main，发现main还引入了bbb，就走bbb了
 
-![image-20220910201827587](.\assets\2_JavaScript模块化.assets\image-20220910201827587.png)
+![image-20220910201827587](./assets/2_JavaScript模块化.assets/image-20220910201827587.png)
 
 bbb执行完了以后发现bbb还引用了ccc，所以该去执行ccc了，但是发现ccc的loaded被设置为true了，所以他就不会执行ccc了，就过掉了，那bbb如果还引入了其他的，依然按照这个规则，当然在加载eee的时候发现eee的loaded已经被加载过了，所以就不会再去加载它了
 
@@ -615,15 +615,15 @@ bbb执行完了以后发现bbb还引用了ccc，所以该去执行ccc了，但�
 
 这里讲的是，到底是exports 给 module.exports赋值，还是module.exports给exports赋值呢？
 
-![image-20220910202547165](.\assets\2_JavaScript模块化.assets\image-20220910202547165.png)
+![image-20220910202547165](./assets/2_JavaScript模块化.assets/image-20220910202547165.png)
 
-![image-20230315222952142](.\assets\2_JavaScript模块化.assets\image-20230315222952142.png)
+![image-20230315222952142](./assets/2_JavaScript模块化.assets/image-20230315222952142.png)
 
 module._load这个方法返回这个模块的exports这个对象，所以其他地方通过require拿到的就是这个返回的对象，所以他们其实是同一个对象
 
  加载每一个node中的js文件，实际上把文件里面所有的代码都是放到一个沙盒里面来执行的，这个沙盒本质上就是一个函数，把js文件里面的代码放到函数里面来运行的，跟匿名函数自执行比较相似，为什么放到自执行函数里面来执行呢？ 因为函数里面是有作用域的，这样的话，函数里面的代码是不会影响到其他地方的
 
-![image-20230315222701875](.\assets\2_JavaScript模块化.assets\image-20230315222701875.png)
+![image-20230315222701875](./assets/2_JavaScript模块化.assets/image-20230315222701875.png)
 
 这个this.exports就是module.exports，是先给module.exports赋值为{}，然后module.exports给exports赋值的
 
@@ -689,7 +689,7 @@ AMD主要是应用于浏览器的一种模块化规范：
 
 - data-main属性的作用是在加载完src的文件后会加载执行该文件
 
-![image-20220805073527916](.\assets\2_JavaScript模块化.assets\image-20220805073527916.png)
+![image-20220805073527916](./assets/2_JavaScript模块化.assets/image-20220805073527916.png)
 
 不能直接上面这样引用，要在下面这样引用
 
@@ -700,7 +700,7 @@ AMD主要是应用于浏览器的一种模块化规范：
 
 index.js
 
-![image-20230315224245739](.\assets\2_JavaScript模块化.assets\image-20230315224245739.png)
+![image-20230315224245739](./assets/2_JavaScript模块化.assets/image-20230315224245739.png)
 
 这个require是哪来的呢？它是lib/require.js给我们提供的
 
@@ -710,51 +710,51 @@ index.js
 
 bar.js
 
-![image-20230315224417637](.\assets\2_JavaScript模块化.assets\image-20230315224417637.png)
+![image-20230315224417637](./assets/2_JavaScript模块化.assets/image-20230315224417637.png)
 
 我希望，我这里定义的name，age，sayHello这些东西可以在foo使用，那么怎么办呢？我需要导出
 
 bar.js
 
-![image-20230315224542881](.\assets\2_JavaScript模块化.assets\image-20230315224542881.png)
+![image-20230315224542881](./assets/2_JavaScript模块化.assets/image-20230315224542881.png)
 
 
 
 现在我要在foo.js使用bar.js这个模块了
 
-![image-20230315225533678](.\assets\2_JavaScript模块化.assets\image-20230315225533678.png)
+![image-20230315225533678](./assets/2_JavaScript模块化.assets/image-20230315225533678.png)
 
 但是现在的代码在浏览器中是不会显示任何东西的，因为我们当前只是加载了main.js，main.js当前是没有加载其他任何的代码的，所以它是不会进行加载的，注意：上面只是配置，所以如果想真正看到效果的话，需要这样
 
-![image-20230315225829330](.\assets\2_JavaScript模块化.assets\image-20230315225829330.png)
+![image-20230315225829330](./assets/2_JavaScript模块化.assets/image-20230315225829330.png)
 
 一旦引入了foo.js， 就会执行foo.js里面的代码，foo.js里面会引入bar.js的代码，并且进行一些打印
 
-![image-20230315225937634](.\assets\2_JavaScript模块化.assets\image-20230315225937634.png)
+![image-20230315225937634](./assets/2_JavaScript模块化.assets/image-20230315225937634.png)
 
 这样在浏览器中进行了打印
 
 总结一下，第一步
 
-![image-20230318155646389](.\assets\2_JavaScript模块化.assets\image-20230318155646389.png)
+![image-20230318155646389](./assets/2_JavaScript模块化.assets/image-20230318155646389.png)
 
 导入require库，然后引入我们的js代码
 
 第二步
 
-![image-20230318155710356](.\assets\2_JavaScript模块化.assets\image-20230318155710356.png)
+![image-20230318155710356](./assets/2_JavaScript模块化.assets/image-20230318155710356.png)
 
 我们在我们引入的js代码中配置了两个模块，然后我们导入了其中一个模块，foo模块
 
 第三步
 
-![image-20230318155744137](.\assets\2_JavaScript模块化.assets\image-20230318155744137.png)
+![image-20230318155744137](./assets/2_JavaScript模块化.assets/image-20230318155744137.png)
 
 我们在foo模块导入了bar模块，并且我们打印了bar模块的一些东西
 
 第四步
 
-![image-20230318155815310](.\assets\2_JavaScript模块化.assets\image-20230318155815310.png)
+![image-20230318155815310](./assets/2_JavaScript模块化.assets/image-20230318155815310.png)
 
 我们定义了bar模块中的一些变量，并且导出了
 
@@ -766,35 +766,35 @@ bar.js
 
 我们在文件中需要在define中写了
 
-![image-20220805074111387](.\assets\2_JavaScript模块化.assets\image-20220805074111387.png)
+![image-20220805074111387](./assets/2_JavaScript模块化.assets/image-20220805074111387.png)
 
-![image-20220805074221981](.\assets\2_JavaScript模块化.assets\image-20220805074221981.png)
+![image-20220805074221981](./assets/2_JavaScript模块化.assets/image-20220805074221981.png)
 
 注意这里不需要src
 
 上面的案例说明了一个问题，在foo中导出了东西，在main.js导入了东西，所以，这个就实现了模块化了
 
-![image-20220805074407664](.\assets\2_JavaScript模块化.assets\image-20220805074407664.png)
+![image-20220805074407664](./assets/2_JavaScript模块化.assets/image-20220805074407664.png)
 
 如果给baseUrl为空
 
 那么就需要给foo加src
 
-![image-20220805074622336](.\assets\2_JavaScript模块化.assets\image-20220805074622336.png)
+![image-20220805074622336](./assets/2_JavaScript模块化.assets/image-20220805074622336.png)
 
 然后我们在bar模块中引入foo
 
-![image-20220805074648040](.\assets\2_JavaScript模块化.assets\image-20220805074648040.png)
+![image-20220805074648040](./assets/2_JavaScript模块化.assets/image-20220805074648040.png)
 
-![image-20220805074758539](.\assets\2_JavaScript模块化.assets\image-20220805074758539.png)
+![image-20220805074758539](./assets/2_JavaScript模块化.assets/image-20220805074758539.png)
 
 
 
-![image-20220726130521419](.\assets\2_JavaScript模块化.assets\image-20220726130521419.png)
+![image-20220726130521419](./assets/2_JavaScript模块化.assets/image-20220726130521419.png)
 
-![image-20220726130535618](.\assets\2_JavaScript模块化.assets\image-20220726130535618.png)
+![image-20220726130535618](./assets/2_JavaScript模块化.assets/image-20220726130535618.png)
 
-![image-20220726130549285](.\assets\2_JavaScript模块化.assets\image-20220726130549285.png)
+![image-20220726130549285](./assets/2_JavaScript模块化.assets/image-20220726130549285.png)
 
 
 
@@ -831,21 +831,21 @@ CMD也有自己比较优秀的实现方案：
 
 foo.js导出
 
-![image-20230315233711572](.\assets\2_JavaScript模块化.assets\image-20230315233711572.png)
+![image-20230315233711572](./assets/2_JavaScript模块化.assets/image-20230315233711572.png)
 
 
 
 index.js进行导入
 
-![image-20230315233753454](.\assets\2_JavaScript模块化.assets\image-20230315233753454.png)
+![image-20230315233753454](./assets/2_JavaScript模块化.assets/image-20230315233753454.png)
 
 运行，就可以看到
 
-![image-20230315233822345](.\assets\2_JavaScript模块化.assets\image-20230315233822345.png)
+![image-20230315233822345](./assets/2_JavaScript模块化.assets/image-20230315233822345.png)
 
 但是我们要这样写才能运行成功
 
-![image-20230315233856645](.\assets\2_JavaScript模块化.assets\image-20230315233856645.png)
+![image-20230315233856645](./assets/2_JavaScript模块化.assets/image-20230315233856645.png)
 
 
 
@@ -883,7 +883,7 @@ ES Module模块采用export和import关键字来实现模块化：
 
 index.html
 
-![image-20230316201326031](.\assets\2_JavaScript模块化.assets\image-20230316201326031.png)
+![image-20230316201326031](./assets/2_JavaScript模块化.assets/image-20230316201326031.png)
 
 index.js
 
@@ -899,7 +899,7 @@ index.js
 
 index.html
 
-![image-20230316201525982](.\assets\2_JavaScript模块化.assets\image-20230316201525982.png)
+![image-20230316201525982](./assets/2_JavaScript模块化.assets/image-20230316201525982.png)
 
 需要把这个script标签加上type属性
 
@@ -907,27 +907,27 @@ index.html
 
 修改index.js
 
-![image-20230316201634322](.\assets\2_JavaScript模块化.assets\image-20230316201634322.png)
+![image-20230316201634322](./assets/2_JavaScript模块化.assets/image-20230316201634322.png)
 
 当把index.html执行起来之后
 
-![image-20220811072121747](.\assets\2_JavaScript模块化.assets\image-20220811072121747.png)
+![image-20220811072121747](./assets/2_JavaScript模块化.assets/image-20220811072121747.png)
 
 会遇到这个错误，这个错误就是跨域的错误
 
 所以我们需要用VScode的一个插件来避免跨域
 
-![image-20220811073620917](.\assets\2_JavaScript模块化.assets\image-20220811073620917.png)
+![image-20220811073620917](./assets/2_JavaScript模块化.assets/image-20220811073620917.png)
 
-![image-20220811071338172](.\assets\2_JavaScript模块化.assets\image-20220811071338172.png)
+![image-20220811071338172](./assets/2_JavaScript模块化.assets/image-20220811071338172.png)
 
-![image-20220811071454616](.\assets\2_JavaScript模块化.assets\image-20220811071454616.png)‘![image-20220811071656889](.\assets\2_JavaScript模块化.assets\image-20220811071656889.png)
+![image-20220811071454616](./assets/2_JavaScript模块化.assets/image-20220811071454616.png)‘![image-20220811071656889](./assets/2_JavaScript模块化.assets/image-20220811071656889.png)
 
 并没有给他当成模块化
 
 所以必须要这样
 
-![image-20220811071734587](.\assets\2_JavaScript模块化.assets\image-20220811071734587.png)
+![image-20220811071734587](./assets/2_JavaScript模块化.assets/image-20220811071734587.png)
 
 这样就可以了
 
@@ -935,25 +935,25 @@ index.html
 
 live-server
 
-![image-20220811072026171](.\assets\2_JavaScript模块化.assets\image-20220811072026171.png)
+![image-20220811072026171](./assets/2_JavaScript模块化.assets/image-20220811072026171.png)
 
 如果通过本地打开也会报错
 
-![image-20220811072121747](.\assets\2_JavaScript模块化.assets\image-20220811072121747.png)
+![image-20220811072121747](./assets/2_JavaScript模块化.assets/image-20220811072121747.png)
 
 是因为当前，如果要把一个文件当成一个模块
 
-![image-20220811072221371](.\assets\2_JavaScript模块化.assets\image-20220811072221371.png)
+![image-20220811072221371](./assets/2_JavaScript模块化.assets/image-20220811072221371.png)
 
 你不能用file这个url-scheme前缀，你可以用http、或者https
 
-![image-20220811072408043](.\assets\2_JavaScript模块化.assets\image-20220811072408043.png)
+![image-20220811072408043](./assets/2_JavaScript模块化.assets/image-20220811072408043.png)
 
 file不能正常的去加载一个模块
 
-![image-20220811072541661](.\assets\2_JavaScript模块化.assets\image-20220811072541661.png)
+![image-20220811072541661](./assets/2_JavaScript模块化.assets/image-20220811072541661.png)
 
-![image-20220811072747912](.\assets\2_JavaScript模块化.assets\image-20220811072747912.png)
+![image-20220811072747912](./assets/2_JavaScript模块化.assets/image-20220811072747912.png)
 
 这样才能正确解析
 
@@ -979,7 +979,7 @@ file不能正常的去加载一个模块
 
 如果直接在浏览器中运行代码，会报如下错误：
 
-![image-20220726131017706](.\assets\2_JavaScript模块化.assets\image-20220726131017706.png)
+![image-20220726131017706](./assets/2_JavaScript模块化.assets/image-20220726131017706.png)
 
 
 
@@ -1101,7 +1101,7 @@ foo.age;
 
 补充：export和import可以结合使用
 
-![image-20220726131239448](.\assets\2_JavaScript模块化.assets\image-20220726131239448.png)
+![image-20220726131239448](./assets/2_JavaScript模块化.assets/image-20220726131239448.png)
 
 为什么要这样做呢？
 
@@ -1109,21 +1109,21 @@ foo.age;
 - 这样方便指定统一的接口规范，也方便阅读；
 - 这个时候，我们就可以使用export和import结合使用；
 
-![image-20220811075232389](.\assets\2_JavaScript模块化.assets\image-20220811075232389.png)
+![image-20220811075232389](./assets/2_JavaScript模块化.assets/image-20220811075232389.png)
 
 使用的时候这样就可以了
 
-![image-20220811075253183](.\assets\2_JavaScript模块化.assets\image-20220811075253183.png)
+![image-20220811075253183](./assets/2_JavaScript模块化.assets/image-20220811075253183.png)
 
 
 
 上面的导出有些繁琐，还有简单的办法
 
-![image-20220811075433209](.\assets\2_JavaScript模块化.assets\image-20220811075433209.png)
+![image-20220811075433209](./assets/2_JavaScript模块化.assets/image-20220811075433209.png)
 
 还有第三种方法
 
-![image-20220811075543461](.\assets\2_JavaScript模块化.assets\image-20220811075543461.png)
+![image-20220811075543461](./assets/2_JavaScript模块化.assets/image-20220811075543461.png)
 
 依然可以正常使用，导入的时候也是用上面的导入就行
 
@@ -1148,11 +1148,11 @@ foo.age;
 
 注意：在一个模块中，只能有一个默认导出（default export）；
 
-![image-20220811075945562](.\assets\2_JavaScript模块化.assets\image-20220811075945562.png)
+![image-20220811075945562](./assets/2_JavaScript模块化.assets/image-20220811075945562.png)
 
-![image-20220811080005351](.\assets\2_JavaScript模块化.assets\image-20220811080005351.png)
+![image-20220811080005351](./assets/2_JavaScript模块化.assets/image-20220811080005351.png)
 
-![image-20220811080048222](.\assets\2_JavaScript模块化.assets\image-20220811080048222.png)
+![image-20220811080048222](./assets/2_JavaScript模块化.assets/image-20220811080048222.png)
 
 但是下面的用法用的多一点
 
@@ -1177,15 +1177,15 @@ foo.age;
 - 如果根据不同的条件，动态来选择加载模块的路径；
 - 这个时候我们需要使用 import() 函数来动态加载；
 
-![image-20220726131506371](.\assets\2_JavaScript模块化.assets\image-20220726131506371.png)
+![image-20220726131506371](./assets/2_JavaScript模块化.assets/image-20220726131506371.png)
 
-![image-20230316204120843](.\assets\2_JavaScript模块化.assets\image-20230316204120843.png)
+![image-20230316204120843](./assets/2_JavaScript模块化.assets/image-20230316204120843.png)
 
 
 
 这种情况下会报错的，因为代码在放到浏览器执行的时候，会先进行编译，在编译阶段的时候发现你的if中有import关键字，就会抛出错误，因为你不能确定你导出的是什么，他需要在编译的时候就需要确定一个依赖关系
 
-![image-20220910225717623](.\assets\2_JavaScript模块化.assets\image-20220910225717623.png)
+![image-20220910225717623](./assets/2_JavaScript模块化.assets/image-20220910225717623.png)
 
 首先要知道这些所有的代码都是交给JS引擎来执行和解析的
 
@@ -1211,11 +1211,11 @@ foo.age;
   - 脚手架中也可以使用import函数，这个import函数是什么呢？
     - 大部分的脚手架都是基于webpack环境的，所以这里写的import函数都是被webpack解析的，webpack解析import的时候，一旦发现了你这个文件，他就会单独对你这个文件进行打包，单独打包到一个js文件里面，这样的话，就能避免首屏渲染的时候加载过多的代码导致白屏等问题，等到用到哪个JS文件，再下载哪个JS文件就行了，这样效率会高很多
 
-![image-20220726131523445](.\assets\2_JavaScript模块化.assets\image-20220726131523445.png)
+![image-20220726131523445](./assets/2_JavaScript模块化.assets/image-20220726131523445.png)
 
 但是require（）可以，因为require是一个函数，它是在执行的时候才会解析里面的内容，所以它不是在编译的时候确定引入的模块
 
-![image-20220811080432944](.\assets\2_JavaScript模块化.assets\image-20220811080432944.png)
+![image-20220811080432944](./assets/2_JavaScript模块化.assets/image-20220811080432944.png)
 
 必须要前面的代码解析完之后，才执行后面的代码
 
@@ -1223,13 +1223,13 @@ foo.age;
 
 那我不想等你解析完，在执行后面的代码怎么办呢
 
-![image-20220811080632960](.\assets\2_JavaScript模块化.assets\image-20220811080632960.png)
+![image-20220811080632960](./assets/2_JavaScript模块化.assets/image-20220811080632960.png)
 
 那怎么拿到结果呢
 
-![image-20220811080702743](.\assets\2_JavaScript模块化.assets\image-20220811080702743.png)
+![image-20220811080702743](./assets/2_JavaScript模块化.assets/image-20220811080702743.png)
 
-![image-20220811080737544](.\assets\2_JavaScript模块化.assets\image-20220811080737544.png)
+![image-20220811080737544](./assets/2_JavaScript模块化.assets/image-20220811080737544.png)
 
 
 
@@ -1245,11 +1245,11 @@ import 可以直接当成一个函数来执行
 
 import 也可以当成一个对象来使用
 
-![image-20220811080933000](.\assets\2_JavaScript模块化.assets\image-20220811080933000.png)
+![image-20220811080933000](./assets/2_JavaScript模块化.assets/image-20220811080933000.png)
 
 就是一个下载的url
 
-![image-20220811080912896](.\assets\2_JavaScript模块化.assets\image-20220811080912896.png)
+![image-20220811080912896](./assets/2_JavaScript模块化.assets/image-20220811080912896.png)
 
 下载的路径保存在meta属性中
 
@@ -1271,7 +1271,7 @@ CommonJS模块加载js文件的过程是运行时加载的，并且是同步的�
 - 运行时加载意味着是js引擎在执行js代码的过程中加载模块；
 - 同步的就意味着一个文件没有加载结束之前，后面的代码都不会执行；
 
-![image-20220910210044664](.\assets\2_JavaScript模块化.assets\image-20220910210044664.png)
+![image-20220910210044664](./assets/2_JavaScript模块化.assets/image-20220910210044664.png)
 
 CommonJS通过module.exports导出的是一个对象：
 
@@ -1295,23 +1295,23 @@ ES Module加载JS文件的过程是编译（解析）时加载的，并且是异
 
 index.html
 
-![image-20230316221258318](.\assets\2_JavaScript模块化.assets\image-20230316221258318.png)
+![image-20230316221258318](./assets/2_JavaScript模块化.assets/image-20230316221258318.png)
 
 normal.js
 
-  ![image-20230316221543086](.\assets\2_JavaScript模块化.assets\image-20230316221543086.png)
+  ![image-20230316221543086](./assets/2_JavaScript模块化.assets/image-20230316221543086.png)
 
 index.js
 
-![image-20230316221637875](.\assets\2_JavaScript模块化.assets\image-20230316221637875.png)
+![image-20230316221637875](./assets/2_JavaScript模块化.assets/image-20230316221637875.png)
 
 index.js引用了foo.js
 
 foo.js
 
-![image-20230316221721619](.\assets\2_JavaScript模块化.assets\image-20230316221721619.png)
+![image-20230316221721619](./assets/2_JavaScript模块化.assets/image-20230316221721619.png)
 
-![image-20230316221821046](.\assets\2_JavaScript模块化.assets\image-20230316221821046.png)
+![image-20230316221821046](./assets/2_JavaScript模块化.assets/image-20230316221821046.png)
 
 在html中，命名index.js是放在上面的，但是我们可以看到打印中，它跑到了下面
 
@@ -1319,7 +1319,7 @@ foo.js
 
 我们给他加了一个 type = 'module' 相当于给他加了一个属性 async属性
 
-![image-20230316221926241](.\assets\2_JavaScript模块化.assets\image-20230316221926241.png)
+![image-20230316221926241](./assets/2_JavaScript模块化.assets/image-20230316221926241.png)
 
 
 
@@ -1327,17 +1327,17 @@ foo.js
 
 foo.js(导出)
 
-![image-20230316222108517](.\assets\2_JavaScript模块化.assets\image-20230316222108517.png)
+![image-20230316222108517](./assets/2_JavaScript模块化.assets/image-20230316222108517.png)
 
 index.js(导入)
 
-![image-20230316222155417](.\assets\2_JavaScript模块化.assets\image-20230316222155417.png)
+![image-20230316222155417](./assets/2_JavaScript模块化.assets/image-20230316222155417.png)
 
 上面的意思是，在导出的时候，1秒钟后将导出的name做一个修改，在导入的文件中2秒钟后打印修改后的name，它的值是什么呢？
 
 打印结果
 
-![image-20230316222319878](.\assets\2_JavaScript模块化.assets\image-20230316222319878.png)
+![image-20230316222319878](./assets/2_JavaScript模块化.assets/image-20230316222319878.png)
 
 为什么是一个aaa呢？明明导出了一个对象，里面的name又不是引用赋值，怎么会跟着改呢？
 
@@ -1363,7 +1363,7 @@ ES Module的解析过程可以划分为三个阶段：
 - 阶段二：实例化（Instantiation），对模块记录进行实例化，并且分配内存空间，解析模块的导入和导出语句，把模块指向 对应的内存地址。
 - 阶段三：运行（Evaluation），运行代码，计算值，并且将值填充到内存地址中；
 
-![image-20220726132034128](.\assets\2_JavaScript模块化.assets\image-20220726132034128.png)
+![image-20220726132034128](./assets/2_JavaScript模块化.assets/image-20220726132034128.png)
 
 
 
@@ -1371,7 +1371,7 @@ esmodule原理
 
 浏览器如何对esmodule进行解析呢？
 
-![image-20220812075142703](.\assets\2_JavaScript模块化.assets\image-20220812075142703.png)
+![image-20220812075142703](./assets/2_JavaScript模块化.assets/image-20220812075142703.png)
 
 加载和解析我们的JS文件都是JS引擎帮我们做的，那么JS引擎到底是什么样的原理呢？
 
@@ -1379,13 +1379,13 @@ esmodule原理
 
 ## 阶段一：构建阶段
 
-![image-20220726132057480](.\assets\2_JavaScript模块化.assets\image-20220726132057480.png)
+![image-20220726132057480](./assets/2_JavaScript模块化.assets/image-20220726132057480.png)
 
-![image-20220815070001706](.\assets\2_JavaScript模块化.assets\image-20220815070001706.png)
+![image-20220815070001706](./assets/2_JavaScript模块化.assets/image-20220815070001706.png)
 
 静态分析，不是运行代码
 
-![image-20220815070213299](.\assets\2_JavaScript模块化.assets\image-20220815070213299.png)
+![image-20220815070213299](./assets/2_JavaScript模块化.assets/image-20220815070213299.png)
 
 
 
@@ -1397,13 +1397,13 @@ esmodule原理
 
 在main的js中还会引用其他的js文件
 
-![image-20220812075308956](.\assets\2_JavaScript模块化.assets\image-20220812075308956.png)
+![image-20220812075308956](./assets/2_JavaScript模块化.assets/image-20220812075308956.png)
 
 那么这些js文件应该会继续被下载，如果foo.js文件又有引用其他的文件，那么应该会继续被下载
 
 应该是这样一个过程
 
-![image-20220812075448018](.\assets\2_JavaScript模块化.assets\image-20220812075448018.png)
+![image-20220812075448018](./assets/2_JavaScript模块化.assets/image-20220812075448018.png)
 
 因为file是本地的，但是esmodule是需要下载的，必须要通过http/https进行下载的，必须有这样一个过程
 
@@ -1411,7 +1411,7 @@ esmodule原理
 
 那么下载下来之后会怎么做呢？
 
-![image-20220812075818709](.\assets\2_JavaScript模块化.assets\image-20220812075818709.png)
+![image-20220812075818709](./assets/2_JavaScript模块化.assets/image-20220812075818709.png)
 
 这个就是构建
 
@@ -1419,7 +1419,7 @@ esmodule原理
 
 ## 阶段二和三：实例化阶段 – 求值阶段
 
-![image-20220726132131613](.\assets\2_JavaScript模块化.assets\image-20220726132131613.png)
+![image-20220726132131613](./assets/2_JavaScript模块化.assets/image-20220726132131613.png)
 
 
 
@@ -1431,7 +1431,7 @@ esmodule原理
 
 那么创建对象的过程，被称为实例化的过程
 
-![image-20220812080107533](.\assets\2_JavaScript模块化.assets\image-20220812080107533.png)
+![image-20220812080107533](./assets/2_JavaScript模块化.assets/image-20220812080107533.png)
 
 
 
@@ -1439,11 +1439,11 @@ esmodule原理
 
 假设有一个模块，这个模块最后有一个export，在上面这个阶段将这个export导出，并且分配一块内存，这块内存其实就保存着name的值，保存着age的值，但是在第二个阶段实际保存的是空值
 
-![image-20220812080520215](.\assets\2_JavaScript模块化.assets\image-20220812080520215.png)
+![image-20220812080520215](./assets/2_JavaScript模块化.assets/image-20220812080520215.png)
 
 为什么是未定义呢？因为在实例化的时候，内部代码没有运行
 
-![image-20220812080716090](.\assets\2_JavaScript模块化.assets\image-20220812080716090.png)
+![image-20220812080716090](./assets/2_JavaScript模块化.assets/image-20220812080716090.png)
 
 js引擎针对模块化文件，它是分开执行的，先执行import语句和export语句
 
@@ -1455,7 +1455,7 @@ js引擎针对模块化文件，它是分开执行的，先执行import语句和
 
 之后才能知道导出的name是什么，age是什么
 
-![image-20220812081042252](.\assets\2_JavaScript模块化.assets\image-20220812081042252.png)
+![image-20220812081042252](./assets/2_JavaScript模块化.assets/image-20220812081042252.png)
 
 这块内存就会保存具体值
 
@@ -1467,35 +1467,35 @@ js引擎针对模块化文件，它是分开执行的，先执行import语句和
 
 ## 具体原理解析
 
-![image-20220815070334814](.\assets\2_JavaScript模块化.assets\image-20220815070334814.png)
+![image-20220815070334814](./assets/2_JavaScript模块化.assets/image-20220815070334814.png)
 
 
 
-![image-20220815070735567](.\assets\2_JavaScript模块化.assets\image-20220815070735567.png)
+![image-20220815070735567](./assets/2_JavaScript模块化.assets/image-20220815070735567.png)
 
-![image-20220815071001760](.\assets\2_JavaScript模块化.assets\image-20220815071001760.png)
+![image-20220815071001760](./assets/2_JavaScript模块化.assets/image-20220815071001760.png)
 
-![image-20220815071103518](.\assets\2_JavaScript模块化.assets\image-20220815071103518.png)
+![image-20220815071103518](./assets/2_JavaScript模块化.assets/image-20220815071103518.png)
 
 就会找到里面的count，并且可以看到count是undefined
 
 到第三个阶段运行阶段的时候，就会求值，给count赋值，给render赋值
 
-![image-20220815071252770](.\assets\2_JavaScript模块化.assets\image-20220815071252770.png)
+![image-20220815071252770](./assets/2_JavaScript模块化.assets/image-20220815071252770.png)
 
 求值完之后就可以用了
 
-![image-20220815071352258](.\assets\2_JavaScript模块化.assets\image-20220815071352258.png)
+![image-20220815071352258](./assets/2_JavaScript模块化.assets/image-20220815071352258.png)
 
-![image-20220815071645731](.\assets\2_JavaScript模块化.assets\image-20220815071645731.png)
+![image-20220815071645731](./assets/2_JavaScript模块化.assets/image-20220815071645731.png)
 
 但是不允许导入的变量去修改变量
 
-![image-20220815071724444](.\assets\2_JavaScript模块化.assets\image-20220815071724444.png)
+![image-20220815071724444](./assets/2_JavaScript模块化.assets/image-20220815071724444.png)
 
 
 
-![image-20220815072453357](.\assets\2_JavaScript模块化.assets\image-20220815072453357.png)
+![image-20220815072453357](./assets/2_JavaScript模块化.assets/image-20220815072453357.png)
 
 这个文件的类型是module
 
@@ -1509,19 +1509,19 @@ foo也是一个模块，它也会解析自己的Module Record
 
 另外的Module Record没有其他的依赖，所以不会下载其他的模块
 
-![image-20220815072835113](.\assets\2_JavaScript模块化.assets\image-20220815072835113.png)
+![image-20220815072835113](./assets/2_JavaScript模块化.assets/image-20220815072835113.png)
 
 会把Module Record转成Module enveriment
 
 会告诉Module enveriment导出的是什么东西
 
-![image-20220815073016044](.\assets\2_JavaScript模块化.assets\image-20220815073016044.png)
+![image-20220815073016044](./assets/2_JavaScript模块化.assets/image-20220815073016044.png)
 
 初始的时候，导出的实际上都是undefined
 
 然后会运行代码，给这些导出赋值（阶段三）
 
-![image-20220815073102518](.\assets\2_JavaScript模块化.assets\image-20220815073102518.png)
+![image-20220815073102518](./assets/2_JavaScript模块化.assets/image-20220815073102518.png)
 
 然后给这些值取出来，但是要知道第五行的代码是不能赋值的，因为不允许在导入位置给导出的变量赋值
 
@@ -1541,19 +1541,19 @@ foo也是一个模块，它也会解析自己的Module Record
 
 在最新的LST版本（v12.19.0）中，我们也是可以正常运行的，但是会报一个警告：
 
-![image-20220911005602150](.\assets\2_JavaScript模块化.assets\image-20220911005602150.png)
+![image-20220911005602150](./assets/2_JavaScript模块化.assets/image-20220911005602150.png)
 
 
 
 bair.js
 
-![image-20220911010112868](.\assets\2_JavaScript模块化.assets\image-20220911010112868.png)
+![image-20220911010112868](./assets/2_JavaScript模块化.assets/image-20220911010112868.png)
 
 
 
 main.js进行导入
 
-![image-20220911010002534](.\assets\2_JavaScript模块化.assets\image-20220911010002534.png)
+![image-20220911010002534](./assets/2_JavaScript模块化.assets/image-20220911010002534.png)
 
 这里没有加.js，之前讲过如果require没有加后缀的话，这里会自动加的，那import导出会不会加呢？
 
@@ -1565,7 +1565,7 @@ main.js进行导入
 
 在package中配置
 
-![image-20220911010512262](.\assets\2_JavaScript模块化.assets\image-20220911010512262.png)
+![image-20220911010512262](./assets/2_JavaScript模块化.assets/image-20220911010512262.png)
 
 ES Module这个东西，你需要设置一个type为module,在packge.json中
 
@@ -1575,15 +1575,15 @@ ES Module这个东西，你需要设置一个type为module,在packge.json中
 
 或者采用.mjs来作为扩展名使用这种方式
 
-![image-20220911010626834](.\assets\2_JavaScript模块化.assets\image-20220911010626834.png)
+![image-20220911010626834](./assets/2_JavaScript模块化.assets/image-20220911010626834.png)
 
 还是不行，为什么呢？没有写后缀名，所以要写bar.js
 
-![image-20220911010746370](.\assets\2_JavaScript模块化.assets\image-20220911010746370.png)
+![image-20220911010746370](./assets/2_JavaScript模块化.assets/image-20220911010746370.png)
 
 还是报错，因为bar.js也是当成了一个模块来使用的，所以我们也需要给他变成mjs
 
-![image-20220911010841695](.\assets\2_JavaScript模块化.assets\image-20220911010841695.png)
+![image-20220911010841695](./assets/2_JavaScript模块化.assets/image-20220911010841695.png)
 
 把他们都改成mjs，也就意味着这两个文件都是模块化文件，所以是成功的，如果你在执行代码的时候用到了import或者export，那么导出和引入都需要把文件改成.mjs
 
@@ -1595,7 +1595,7 @@ ES Module这个东西，你需要设置一个type为module,在packge.json中
 
 2、加一些参数
 
-![image-20220911011421742](.\assets\2_JavaScript模块化.assets\image-20220911011421742.png)
+![image-20220911011421742](./assets/2_JavaScript模块化.assets/image-20220911011421742.png)
 
 
 
@@ -1603,7 +1603,7 @@ ES Module这个东西，你需要设置一个type为module,在packge.json中
 
 ## commonjs和esmodule相互调用
 
-![image-20220815073808142](.\assets\2_JavaScript模块化.assets\image-20220815073808142.png)
+![image-20220815073808142](./assets/2_JavaScript模块化.assets/image-20220815073808142.png)
 
 能不能再commonjs中导出，在esmodule中导入呢？
 
@@ -1643,7 +1643,7 @@ npm install webpack webpack-cli
 
 可以发现，它们都是支持的
 
-![image-20220815075447282](.\assets\2_JavaScript模块化.assets\image-20220815075447282.png)
+![image-20220815075447282](./assets/2_JavaScript模块化.assets/image-20220815075447282.png)
 
 
 
@@ -1663,9 +1663,9 @@ npm install webpack webpack-cli
 - 这个依然需要看具体的实现，比如webpack中是支持的、Node最新的Current版本也是支持的；
 - 比较老的node版本是不支持的
 
-![image-20220911012428558](.\assets\2_JavaScript模块化.assets\image-20220911012428558.png)
+![image-20220911012428558](./assets/2_JavaScript模块化.assets/image-20220911012428558.png)
 
-![image-20220911012435878](.\assets\2_JavaScript模块化.assets\image-20220911012435878.png)
+![image-20220911012435878](./assets/2_JavaScript模块化.assets/image-20220911012435878.png)
 
 这里通过module.exports导出，通过import导入，是可以的，注意，这个main.js依然是mjs的后缀
 

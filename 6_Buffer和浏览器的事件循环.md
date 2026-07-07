@@ -98,7 +98,7 @@ console.log(buffer01)
 >
 > 因为他这里显示的是16进制，也就是说这里是16进制的表现形式，可以检验一下，h的16进制是68，转成10进制是104，转成二进制是0110 1000，因为英文字母的编码一般都是ascii编码，所以，我们可以查一下104对应的是不是h呢？
 >
-> ![image-20230326104926782](.\assets\6_Buffer和浏览器的事件循环.assets/image-20230326104926782.png)
+> ![image-20230326104926782](./assets/6_Buffer和浏览器的事件循环.assets/image-20230326104926782.png)
 >
 > 发现确实是这样的 
 
@@ -214,7 +214,7 @@ Buffer可能存储其他格式的内容，就不能仅仅用上面的`Buffer.fro
 
 所以Buffer有很多其他的[创建方式](https://nodejs.org/docs/latest-v16.x/api/buffer.html)
 
-![image-20230326111522751](.\assets\6_Buffer和浏览器的事件循环.assets/image-20230326111522751.png)
+![image-20230326111522751](./assets/6_Buffer和浏览器的事件循环.assets/image-20230326111522751.png)
 
 
 
@@ -506,7 +506,7 @@ node对buffer做了一个封装，就是第一次的时候，不管三七二十�
 
 ### node源码中初始化的buffer内存
 
-<img src=".\assets\6_Buffer和浏览器的事件循环.assets/image-20230326142050857.png" alt="image-20230326142050857" style="zoom:150%;" />
+<img src="./assets/6_Buffer和浏览器的事件循环.assets/image-20230326142050857.png" alt="image-20230326142050857" style="zoom:150%;" />
 
 
 
